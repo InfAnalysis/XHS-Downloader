@@ -2,6 +2,8 @@
 <img src="static/XHS-Downloader.png" alt="" height="256" width="256"><br>
 <h1>XHS-Downloader</h1>
 <p>简体中文 | <a href="README_EN.md">English</a></p>
+<a href="https://trendshift.io/repositories/5435" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5435" alt="JoeanAmier%2FXHS-Downloader | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<br>
 <img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7a45">
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=for-the-badge&color=9254de">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7875">
@@ -14,6 +16,7 @@
 </div>
 <br>
 <p>🔥 <b>小红书链接提取/作品采集工具</b>：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品链接、用户链接；采集小红书作品信息；提取小红书作品下载地址；下载小红书无水印作品文件！</p>
+<p>🔥 “小红书”、“XiaoHongShu”、“RedNote” 含义相同，本项目统称为 “小红书”</p>
 <p>⭐ 本项目完全免费开源，无任何收费功能，请勿上当受骗！</p>
 <h1>📑 项目功能</h1>
 <ul><b>程序功能</b>
@@ -48,11 +51,11 @@
 <p>⭐ XHS-Downloader 开发计划及进度可前往 <a href="https://github.com/users/JoeanAmier/projects/5">Projects</a> 查阅</p>
 <h1>📸 程序截图</h1>
 <p><b>🎥 点击图片观看演示视频</b></p>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图CN1.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN1.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图CN2.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN2.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图CN3.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN3.png" alt=""></a>
 <h1>🔗 支持链接</h1>
 <ul>
 <li><code>https://www.xiaohongshu.com/explore/作品ID?xsec_token=XXX</code></li>
@@ -67,7 +70,8 @@
 <p>如果仅需下载无水印作品文件，建议选择 <b>程序运行</b> 或 <b>Docker 运行</b>；如果有其他需求，建议选择 <b>源码运行</b>！</p>
 <p><code>2.2</code> 版本开始，项目功能无异常的情况下，无需额外处理 Cookie！</p>
 <h2>🖱 程序运行</h2>
-<p>Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
+<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
+<p>⭐ 本项目包含手动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
 <p><strong>注意：Mac OS 平台可执行文件 <code>main</code> 可能需要从终端命令行启动；受设备限制，Mac OS 平台可执行文件尚未经过测试，无法保证可用性！</strong></p>
 <p>若通过此方式使用程序，文件默认下载路径为：<code>.\_internal\Download</code>；配置文件路径为：<code>.\_internal\settings.json</code></p>
 <h2>⌨️ Docker 运行</h2>
@@ -106,9 +110,9 @@
 <p>命令示例：<code>python .\main.py --browser_cookie Chrome --update_settings</code></p>
 <p><code>bool</code> 类型参数支持使用 <code>true</code>、<code>false</code>、<code>1</code>、<code>0</code>、<code>yes</code>、<code>no</code>、<code>on</code> 或 <code>off</code>（不区分大小写）来设置。</p>
 <hr>
-<img src="static/screenshot/命令行模式截图1.png" alt="">
+<img src="static/screenshot/命令行模式截图CN1.png" alt="">
 <hr>
-<img src="static/screenshot/命令行模式截图2.png" alt="">
+<img src="static/screenshot/命令行模式截图CN2.png" alt="">
 <h1>🖥 服务器模式</h1>
 <p><b>启动：</b>运行命令：<code>python .\main.py server</code></p>
 <p><b>关闭：</b>按下 <code>Ctrl</code> + <code>C</code> 关闭服务器</p>
@@ -193,12 +197,15 @@ def api_demo():
 <ul>
 <li>下载小红书无水印作品文件时，脚本需要花费时间处理文件，请等待片刻，切勿多次点击下载按钮</li>
 <li>无水印图片文件为 PNG 格式；无水印视频文件较大，可能需要较长的时间处理，页面跳转可能会导致下载失败</li>
-<li>(已禁用)<del>提取账号发布、收藏、点赞、专辑作品链接时，脚本会尝试自动滚动屏幕直至加载全部作品，滚动检测间隔：2.5 秒</del></li>
-<li>(已禁用)<del>提取发现作品链接、搜索作品、用户链接时，脚本会自动滚动屏幕以尝试加载更多内容，滚动屏幕次数：10 次</del></li>
-<li>(已禁用)<del>可以修改滚动检测间隔、滚动屏幕次数，修改后立即生效；亦可关闭自动滚动屏幕功能，手动滚动屏幕加载内容</del></li>
+<li>提取账号发布、收藏、点赞、专辑作品链接时，脚本可以自动滚动页面直至加载全部作品，默认滚动检测间隔：2.5 秒</li>
+<li>提取发现作品链接、搜索作品、用户链接时，脚本可以自动滚动页面加载更多内容，默认滚动页面次数：10 次</li>
+<li>自动滚动页面功能默认关闭；用户可以自由开启，并修改滚动检测间隔、滚动页面次数，修改后立即生效</li>
+<li>如果未开启自动滚动页面功能，用户需要手动滚动页面以便加载更多内容后再进行其他操作</li>
+<li>支持作品文件打包下载；该功能默认开启，多个文件的作品将会以压缩包格式下载</li>
 <li>使用全局代理工具可能会导致脚本下载文件失败，如有异常，请尝试关闭代理工具，必要时向作者反馈</li>
 <li>XHS-Downloader 用户脚本仅实现可见即可得的数据采集功能，无任何收费功能和破解功能</li>
 </ul>
+<p><strong>自动滚动页面功能代码已重构，该功能默认关闭！启用该功能可能会被小红书检测为自动化操作，从而导致账号受到风控或封禁风险！</strong></p>
 <h1>💻 二次开发</h1>
 <p>如果有其他需求，可以根据 <code>main.py</code> 的注释提示进行代码调用或修改！</p>
 <pre>
@@ -389,6 +396,89 @@ async def example():
 <h1>🗳 下载记录</h1>
 <p>XHS-Downloader 会将下载过的作品 ID 储存至数据库，当重复下载相同的作品时，XHS-Downloader 会自动跳过该作品的文件下载（即使作品文件不存在），如果想要重新下载作品文件，请先删除数据库中对应的作品 ID，再使用 XHS-Downloader 下载作品文件！</p>
 <p>该功能默认开启，如果关闭该功能，XHS-Downloader 会检查文件是否存在，若文件存在则跳过下载！</p>
+
+# 📦 构建可执行文件指南
+
+本指南将引导您通过 Fork 本仓库并执行 GitHub Actions 自动完成基于最新源码的程序构建和打包！
+
+---
+
+## 使用步骤
+
+### 1. Fork 本仓库
+
+1. 点击项目仓库右上角的 **Fork** 按钮，将本仓库 Fork 到您的个人 GitHub 账户中
+2. 您的 Fork 仓库地址将类似于：`https://github.com/your-username/this-repo`
+
+---
+
+### 2. 启用 GitHub Actions
+
+1. 前往您 Fork 的仓库页面
+2. 点击顶部的 **Settings** 选项卡
+3. 点击右侧的 **Actions** 选项卡
+4. 点击 **General** 选项
+5. 在 **Actions permissions** 下，选择 **Allow all actions and reusable workflows** 选项，点击 **Save** 按钮
+
+---
+
+### 3. 手动触发打包流程
+
+1. 在您 Fork 的仓库中，点击顶部的 **Actions** 选项卡
+2. 找到名为 **手动构建可执行文件** 的工作流
+3. 点击右侧的 **Run workflow** 按钮：
+    - 选择 **master** 或者 **develop** 分支
+    - 点击 **Run workflow**
+
+---
+
+### 4. 查看打包进度
+
+1. 在 **Actions** 页面中，您可以看到触发的工作流运行记录
+2. 点击运行记录，查看详细的日志以了解打包进度和状态
+
+---
+
+### 5. 下载打包结果
+
+1. 打包完成后，进入对应的运行记录页面
+2. 在页面底部的 **Artifacts** 部分，您将看到打包的结果文件
+3. 点击下载并保存到本地，即可获得打包好的程序
+
+---
+
+## 注意事项
+
+1. **资源使用**：
+    - Actions 的运行环境由 GitHub 免费提供，普通用户每月有一定的免费使用额度（2000 分钟）
+
+2. **代码修改**：
+    - 您可以自由修改 Fork 仓库中的代码以定制程序打包流程
+    - 修改后重新触发打包流程，您将得到自定义的构建版本
+
+3. **与主仓库保持同步**：
+    - 如果主仓库更新了代码或工作流，建议您定期同步 Fork 仓库以获取最新功能和修复
+
+---
+
+## Actions 常见问题
+
+### Q1: 为什么我无法触发工作流？
+
+A: 请确认您已按照步骤 **启用 Actions**，否则 GitHub 会禁止运行工作流
+
+### Q2: 打包流程失败怎么办？
+
+A:
+
+- 检查运行日志，了解失败原因
+- 确保代码没有语法错误或依赖问题
+- 如果问题仍未解决，可以在本仓库的 [Issues 页面](https://github.com/JoeanAmier/XHS-Downloader/issues) 提出问题
+
+### Q3: 我可以直接使用主仓库的 Actions 吗？
+
+A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fork 仓库的方式执行打包流程
+
 <h1>♥️ 支持项目</h1>
 <p>如果 <b>XHS-Downloader</b> 对您有帮助，请考虑为它点个 <b>Star</b> ⭐，感谢您的支持！</p>
 <table>
@@ -405,6 +495,23 @@ async def example():
 </tbody>
 </table>
 <p>如果您愿意，可以考虑提供资助为 <b>XHS-Downloader</b> 提供额外的支持！</p>
+<h1>🌟 贡献指南</h1>
+<p><strong>欢迎对本项目做出贡献！为了保持代码库的整洁、高效和易于维护，请仔细阅读以下指南，以确保您的贡献能够顺利被接受和整合。</strong></p>
+<ul>
+<li>在开始开发前，请从 <code>develop</code> 分支拉取最新的代码，以此为基础进行修改；这有助于避免合并冲突并保证您的改动基于最新的项目状态。</li>
+<li>如果您的更改涉及多个不相关的功能或问题，请将它们分成多个独立的提交或拉取请求。</li>
+<li>每个拉取请求应尽可能专注于单一功能或修复，以便于代码审查和测试。</li>
+<li>遵循现有的代码风格；请确保您的代码与项目中已有的代码风格保持一致。</li>
+<li>编写可读性强的代码；添加适当的注释帮助他人理解您的意图。</li>
+<li>每个提交都应该包含一个清晰、简洁的提交信息，以描述所做的更改。提交信息应遵循以下格式：<code>&lt;类型&gt;: &lt;简短描述&gt;</code></li>
+<li>当您准备提交拉取请求时，请优先将它们提交到 <code>develop</code> 分支；这是为了给维护者一个缓冲区，在最终合并到 <code>master</code>
+分支之前进行额外的测试和审查。</li>
+</ul>
+<p><strong>参考资料：</strong></p>
+<ul>
+<li><a href="https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct/">贡献者公约</a></li>
+<li><a href="https://opensource.guide/zh-hans/how-to-contribute/">如何为开源做贡献</a></li>
+</ul>
 <h1>✉️ 联系作者</h1>
 <ul>
 <li>作者邮箱：yonglelolu@foxmail.com</li>

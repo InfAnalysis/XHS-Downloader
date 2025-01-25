@@ -2,6 +2,8 @@
 <img src="static/XHS-Downloader.png" alt="" height="256" width="256"><br>
 <h1>XHS-Downloader</h1>
 <p><a href="README.md">简体中文</a> | English</p>
+<a href="https://trendshift.io/repositories/5435" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5435" alt="JoeanAmier%2FXHS-Downloader | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<br>
 <img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7a45">
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=for-the-badge&color=9254de">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7875">
@@ -13,15 +15,16 @@
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=for-the-badge&color=f759ab">
 </div>
 <br>
-<p>🔥 <b>Xiaohongshu Link Extraction/Content Collection Tool</b>：Extract account-published, favorited, and liked content links; extract search result content links and user links; collect Xiaohongshu content information; extract Xiaohongshu content download addresses; download Xiaohongshu watermark-free content files!</p>
+<p>🔥 <b>RedNote Link Extraction/Content Collection Tool</b>：Extract account-published, favorites, and liked works links; extract search result works links and user links; collect RedNote works information; extract RedNote works download addresses; download RedNote watermark-free works files!</p>
+<p>🔥 "RedNote", "XiaoHongShu" and "小红书" have the same meaning, and this project is collectively referred to as "RedNote".</p>
 <p>⭐ This project is completely free and open-source, with no paid features. Please do not be deceived!</p>
 <p>⭐ Due to the author's limited energy, I was unable to update the English document in a timely manner, and the content may have become outdated, partial translation is machine translation, the translation result may be incorrect, Suggest referring to Chinese documentation. If you want to contribute to translation, we warmly welcome you.</p>
 <h1>📑 Project Features</h1>
 <ul><b>Program Features</b>
-<li>✅ Collect Xiaohongshu works information</li>
-<li>✅ Extract Xiaohongshu works download addresses</li>
-<li>✅ Download Xiaohongshu watermark-free works files</li>
-<li>✅ Download Xiaohongshu livePhoto files (non-watermark-free)</li>
+<li>✅ Collect RedNote works information</li>
+<li>✅ Extract RedNote works download addresses</li>
+<li>✅ Download RedNote watermark-free works files</li>
+<li>✅ Download RedNote livePhoto files (non-watermark-free)</li>
 <li>✅ Automatically skip already downloaded works files</li>
 <li>✅ works file integrity handling mechanism</li>
 <li>✅ Customizable image works file download format</li>
@@ -37,7 +40,7 @@
 <li>✅ Intelligent recognition of works file types</li>
 </ul>
 <ul><a href="#user-scripts"><b>Script Features</b></a>
-<li>✅ Download Xiaohongshu watermark-free works files</li>
+<li>✅ Download RedNote watermark-free works files</li>
 <li>✅ Extract discovery page works links</li>
 <li>✅ Extract account-published works links</li>
 <li>✅ Extract account-favorited works links</li>
@@ -49,26 +52,27 @@
 <p>⭐ The development plan and progress of XHS-Downloader can be found at <a href="https://github.com/users/JoeanAmier/projects/5">Projects</a></p>
 <h1>📸 Program Screenshots</h1>
 <p><b>🎥 Click the images to watch the demo video</b></p>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图EN1.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN1.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图EN2.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN2.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1KGWNeCEyM/"><img src="static/screenshot/程序运行截图EN3.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN3.png" alt=""></a>
 <h1>🔗 Supported Links</h1>
 <ul>
 <li><code>https://www.xiaohongshu.com/explore/WorksID?xsec_token=XXX</code></li>
 <li><code>https://www.xiaohongshu.com/discovery/item/WorksID?xsec_token=XXX</code></li>
 <li><code>https://xhslink.com/ShareCode</code></li>
 <br/>
-<p><b>Supports entering multiple content links at once, separated by spaces; the program will automatically extract valid links without additional processing!</b></p>
+<p><b>Supports entering multiple works links at once, separated by spaces; the program will automatically extract valid links without additional processing!</b></p>
 </ul>
 <h1>🪟 About the Terminal</h1>
 <p>⭐ It is recommended to use the <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a> (default terminal for Windows 11) to run the program for the best display effect!</p>
 <h1>🥣 Usage</h1>
-<p>If you only need to download watermark-free content files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
+<p>If you only need to download watermark-free works files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
 <p>Starting from version <code>2.2</code>, if there are no abnormalities in project functionality, there is no need to handle cookies separately!</p>
 <h2>🖱 Program Run</h2>
-<p>Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
+<p>⭐ Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
+<p>⭐ This project includes GitHub Actions for manually building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
 <p><strong>Note: The executable file <code>main</code> for Mac OS may need to be launched from the terminal command line; Due to device limitations, the Mac OS executable file has not been tested and its availability cannot be guaranteed!</strong></p>
 <p>If you use the program in this way, the default download path for files is: <code>.\_internal\Download</code>; the configuration file path is: <code>.\_internal\settings.json</code></p>
 <h2>⌨️ Docker Run</h2>
@@ -107,9 +111,9 @@
 <p>Command example: <code>python .\main.py --browser_cookie Chrome --update_settings</code></p>
 <p>The <code>bool</code> type parameters support setting with <code>true</code>, <code>false</code>, <code>1</code>, <code>0</code>, <code>yes</code>, <code>no</code>, <code>on</code> or <code>off</code> (case insensitive).</p>
 <hr>
-<img src="static/screenshot/命令行模式截图1.png" alt="">
+<img src="static/screenshot/命令行模式截图EN1.png" alt="">
 <hr>
-<img src="static/screenshot/命令行模式截图2.png" alt="">
+<img src="static/screenshot/命令行模式截图EN2.png" alt="">
 <h1>🖥 Server Mode</h1>
 <p><b>Start:</b> Run the command: <code>python .\main.py server</code></p>
 <p><b>Stop:</b> Press <code>Ctrl</code> + <code>C</code> to stop the server</p>
@@ -133,13 +137,13 @@
 <tr>
 <td align="center">url</td>
 <td align="center">str</td>
-<td align="center">Xiaohongshu content link, auto-extraction, does not support multiple links; Required parameter</td>
+<td align="center">RedNote works link, auto-extraction, does not support multiple links; Required parameter</td>
 <td align="center">None</td>
 </tr>
 <tr>
 <td align="center">download</td>
 <td align="center">bool</td>
-<td align="center">Whether to download the content file; set to <code>true</code> will take more time; Optional parameter</td>
+<td align="center">Whether to download the works file; set to <code>true</code> will take more time; Optional parameter</td>
 <td align="center">false</td>
 </tr>
 <tr>
@@ -157,7 +161,7 @@
 <tr>
 <td align="center">skip</td>
 <td align="center">bool</td>
-<td align="center">Whether to skip content with download records; set to <code>true</code> will not return content data with download records; Optional parameter</td>
+<td align="center">Whether to skip works with download records; set to <code>true</code> will not return works data with download records; Optional parameter</td>
 <td align="center">false</td>
 </tr>
 </tbody>
@@ -180,7 +184,7 @@ def api_demo():
 </pre>
 <h1>📜 Others</h1>
 <ul>
-<li>Due to the date information carried in the links of Xiaohongshu works, using links obtained from previous dates may be subject to risk control. It is recommended to use the latest Xiaohongshu works links when downloading Xiaohongshu work files</li>
+<li>Due to the date information carried in the links of RedNote works, using links obtained from previous dates may be subject to risk control. It is recommended to use the latest RedNote works links when downloading RedNote work files</li>
 <li>Windows system requires running programs as an administrator to read Chromium, Chrome, Edge browser cookies</li>
 <li>If the function to save works data to a file is enabled, the works data will be stored by default in the <code>./Download/ExploreData.db</code> file</li>
 <li>The program's download records will be stored in the <code>./ExploreID.db</code> file</li>
@@ -188,21 +192,24 @@ def api_demo():
 <h1 id="user-scripts">🕹 User Script</h1>
 <p>If your browser has the <a href="https://www.tampermonkey.net/">Tampermonkey</a> browser extension installed, you can add the <a href="https://raw.githubusercontent.com/JoeanAmier/XHS-Downloader/master/static/XHS-Downloader.js">user script</a> to experience the project features without needing to download or install anything!</p>
 <img src="static/screenshot/脚本安装教程.png" alt="">
-<p>After successfully installing the script, open the Xiaohongshu page, check the script instructions, and follow the prompts to operate.</p>
+<p>After successfully installing the script, open the RedNote page, check the script instructions, and follow the prompts to operate.</p>
 <img src="static/screenshot/用户脚本截图1.png" alt="">
 <hr>
 <img src="static/screenshot/用户脚本截图2.png" alt="">
-<p>Note: Using the XHS-Downloader user script to batch extract content links, in combination with the XHS-Downloader program, can achieve batch downloading of watermark-free content files!</p>
+<p>Note: Using the XHS-Downloader user script to batch extract works links, in combination with the XHS-Downloader program, can achieve batch downloading of watermark-free works files!</p>
 <h2>📜 Script Instructions</h2>
 <ul>
-<li>When downloading watermark-free Xiaohongshu作品 files, the script will take some time to process the files, please wait a moment and do not click the download button multiple times</li>
-<li>Watermark-free image files are in PNG format; watermark-free video files are larger and may take longer to process, page jumps may cause download failures</li>
-<li>(Disabled)<del>When extracting links of account posts, favorites, likes, and album作品, the script will attempt to automatically scroll the screen until all作品 are loaded, with a scroll detection interval of 2.5 seconds</del></li>
-<li>(Disabled)<del>When extracting discovery作品 links, search作品, and user links, the script will automatically scroll the screen to try to load more content, scrolling the screen up to 10 times</del></li>
-<li>(Disabled)<del>You can modify the scroll detection interval and the number of screen scrolls, changes will take effect immediately; you can also disable the automatic screen scrolling function and manually scroll to load content</del></li>
-<li>Using global proxy tools may cause the script to fail to download files, if there are issues, please try closing the proxy tool, and feedback to the author if necessary</li>
-<li>The XHS-Downloader user script only implements the data collection function that can be obtained visibly, with no paid features or cracking functions</li>
+<li>When downloading watermark-free works from Xiaohongshu, the script requires time to process the files. Please wait for a moment and do not click the download button multiple times.</li>
+<li>Watermark-free image files are in PNG format; watermark-free video files are larger and may take longer to process. Page redirects may cause download failures.</li>
+<li>When extracting links for posts, collects, likes, and board from an account, the script can automatically scroll the page until all works are loaded. The default scroll detection interval is 2.5 seconds.</li>
+<li>When extracting links to explore works, searching for works, and user links, the script can automatically scroll the page to load more content. The default number of page scrolls is 10.</li>
+<li>The automatic page scroll feature is turned off by default. Users can enable it and modify the scroll detection interval and the number of scrolls, with changes taking effect immediately.</li>
+<li>If the automatic page scroll feature is not enabled, users need to manually scroll the page to load more content before performing other actions.</li>
+<li>Support packaging and downloading of work files; This feature is enabled by default, and works from multiple files will be downloaded in compressed file format</li>
+<li>Using global proxy tools may cause script download failures. If there are issues, please try disabling the proxy tool. If necessary, contact the author for feedback.</li>
+<li>XHS-Downloader userscript only implements the data collection functionality for visible content and does not include any paid or cracked features.</li>
 </ul>
+<p><strong>The automatic page scroll feature has been refactored and is turned off by default! Enabling this feature may be detected as automated behavior by Xiaohongshu, potentially resulting in account risk control or banning.</strong></p>
 <h1>💻 Secondary Development</h1>
 <p>If you have other needs, you can perform code calls or modifications based on the comments in <code>main.py</code>!</p>
 <pre>
@@ -271,19 +278,19 @@ async def example():
 <tr>
 <td align="center">work_path</td>
 <td align="center">str</td>
-<td align="center">Root path for saving content data/files</td>
+<td align="center">Root path for saving works data/files</td>
 <td align="center">Project root path</td>
 </tr>
 <tr>
 <td align="center">folder_name</td>
 <td align="center">str</td>
-<td align="center">Name of the folder for storing content files</td>
+<td align="center">Name of the folder for storing works files</td>
 <td align="center">Download</td>
 </tr>
 <tr>
 <td align="center">name_format</td>
 <td align="center">str</td>
-<td align="center"><sup><a href="#fields">1</a></sup>Format of works file name, separated by spaces between fields, supports fields: <code>收藏数量</code>、<code>评论数量</code>、<code>分享数量</code>、<code>点赞数量</code>、<code>作品标签</code>、<code>作品ID</code>、<code>作品标题</code>、<code>作品描述</code>、<code>作品类型</code>、<code>发布时间</code>、<code>最后更新时间</code>、<code>作者昵称</code>、<code>作者ID</code></td>
+<td align="center"><sup><a href="#fields">#</a></sup>Format of works file name, separated by spaces between fields, supports fields: <code>收藏数量</code>、<code>评论数量</code>、<code>分享数量</code>、<code>点赞数量</code>、<code>作品标签</code>、<code>作品ID</code>、<code>作品标题</code>、<code>作品描述</code>、<code>作品类型</code>、<code>发布时间</code>、<code>最后更新时间</code>、<code>作者昵称</code>、<code>作者ID</code></td>
 <td align="center"><code>发布时间 作者昵称 作品标题</code></td>
 </tr>
 <tr>
@@ -295,7 +302,7 @@ async def example():
 <tr>
 <td align="center">cookie</td>
 <td align="center">str</td>
-<td align="center">Xiaohongshu web version cookie, <b>No login required, non essential parameters!</b></td>
+<td align="center">RedNote web version cookie, <b>No login required, non essential parameters!</b></td>
 <td align="center">None</td>
 </tr>
 <tr>
@@ -325,25 +332,25 @@ async def example():
 <tr>
 <td align="center">record_data</td>
 <td align="center">bool</td>
-<td align="center">Whether to save content data to a file, saved in <code>SQLite</code> format</td>
+<td align="center">Whether to save works data to a file, saved in <code>SQLite</code> format</td>
 <td align="center">false</td>
 </tr>
 <tr>
 <td align="center">image_format</td>
 <td align="center">str</td>
-<td align="center">Download format for text and image content files, supported formats: <code>PNG</code>, <code>WEBP</code><br><strong>This parameter affects the API used when downloading images, not the fixed image format!</strong></td>
+<td align="center">Download format for text and image works files, supported formats: <code>PNG</code>, <code>WEBP</code><br><strong>This parameter affects the API used when downloading images, not the fixed image format!</strong></td>
 <td align="center">PNG</td>
 </tr>
 <tr>
 <td align="center">image_download</td>
 <td align="center">bool</td>
-<td align="center">Switch for downloading text and image content files</td>
+<td align="center">Switch for downloading text and image works files</td>
 <td align="center">true</td>
 </tr>
 <tr>
 <td align="center">video_download</td>
 <td align="center">bool</td>
-<td align="center">Switch for downloading video content files</td>
+<td align="center">Switch for downloading video works files</td>
 <td align="center">true</td>
 </tr>
 <tr>
@@ -355,7 +362,7 @@ async def example():
 <tr>
 <td align="center">folder_mode</td>
 <td align="center">bool</td>
-<td align="center">Whether to store each content's files in a separate folder; the folder name matches the file name</td>
+<td align="center">Whether to store each works files in a separate folder; the folder name matches the file name</td>
 <td align="center">false</td>
 </tr>
 <tr>
@@ -396,21 +403,110 @@ async def example():
 <p>Starting from version <code>2.2</code>, if there are no abnormalities in project functionality, there is no need to handle cookies separately!</p>
 <ol>
 <li>Open the browser (optional: start in incognito mode) and visit <code>https://www.xiaohongshu.com/explore</code></li>
-<li>Log in to your Xiaohongshu account (can be skipped)</li>
+<li>Log in to your RedNote account (can be skipped)</li>
 <li>Press <code>F12</code> to open the developer tools</li>
 <li>Select the <code>Network</code> tab</li>
 <li>Check <code>Preserve log</code></li>
 <li>In the <code>Filter</code> input box, enter <code>cookie-name:web_session</code></li>
 <li>Select the <code>Fetch/XHR</code> filter</li>
-<li>Click on any piece of content on the Xiaohongshu page</li>
+<li>Click on any piece of works on the RedNote page</li>
 <li>In the <code>Network</code> tab, select any data packet (if no packets appear, repeat step 7)</li>
 <li>Copy and paste the entire Cookie into the program or configuration file</li>
 </ol>
 <br>
 <img src="static/screenshot/获取Cookie示意图.png" alt="">
 <h1>🗳 Download Records</h1>
-<p>XHS-Downloader will store the IDs of downloaded content in a database. When downloading the same content again, XHS-Downloader will automatically skip the file download (even if the content file does not exist). If you want to re-download the content file, please delete the corresponding content ID from the database and then use XHS-Downloader to download the content file again!</p>
+<p>XHS-Downloader will store the IDs of downloaded works in a database. When downloading the same works again, XHS-Downloader will automatically skip the file download (even if the works file does not exist). If you want to re-download the works file, please delete the corresponding works ID from the database and then use XHS-Downloader to download the works file again!</p>
 <p>This feature is enabled by default. If it is turned off, XHS-Downloader will check if the file exists. If the file exists, it will skip the download!</p>
+
+# 📦 Build of Executable File Guide
+
+This guide will walk you through forking this repository and executing GitHub Actions to automatically build and package
+the program based on the latest source code!
+
+---
+
+## Steps to Use
+
+### 1. Fork the Repository
+
+1. Click the **Fork** button at the top right of the project repository to fork it to your personal GitHub account
+2. Your forked repository address will look like this: `https://github.com/your-username/this-repo`
+
+---
+
+### 2. Enable GitHub Actions
+
+1. Go to the page of your forked repository
+2. Click the **Settings** tab at the top
+3. Click the **Actions** tab on the right
+4. Click the **General** option
+5. Under **Actions permissions**, select **Allow all actions and reusable workflows** and click the **Save** button
+
+---
+
+### 3. Manually Trigger the Build Process
+
+1. In your forked repository, click the **Actions** tab at the top
+2. Find the workflow named **Manual Build of Executable File**
+3. Click the **Run workflow** button on the right:
+    - Select the **master** or **develop** branch
+    - Click **Run workflow**
+
+---
+
+### 4. Check the Build Progress
+
+1. On the **Actions** page, you can see the execution records of the triggered workflow
+2. Click on the run record to view detailed logs to check the build progress and status
+
+---
+
+### 5. Download the Build Result
+
+1. Once the build is complete, go to the corresponding run record page
+2. In the **Artifacts** section at the bottom of the page, you will see the built result file
+3. Click to download and save it to your local machine to get the built program
+
+---
+
+## Notes
+
+1. **Resource Usage**:
+    - GitHub provides free build environments for Actions, with a monthly usage limit (2000 minutes) for free-tier
+      users
+
+2. **Code Modifications**:
+    - You are free to modify the code in your forked repository to customize the build process
+    - After making changes, you can trigger the build process again to get your customized version
+
+3. **Stay in Sync with the Main Repository**:
+    - If the main repository is updated with new code or workflows, it is recommended that you periodically sync your
+      forked repository to get the latest features and fixes
+
+---
+
+## Frequently Asked Questions
+
+### Q1: Why can't I trigger the workflow?
+
+A: Please ensure that you have followed the steps to **Enable Actions**. Otherwise, GitHub will prevent the workflow
+from running
+
+### Q2: What should I do if the build process fails?
+
+A:
+
+- Check the run logs to understand the cause of the failure
+- Ensure there are no syntax errors or dependency issues in the code
+- If the problem persists, please open an issue on
+  the [Issues page](https://github.com/JoeanAmier/XHS-Downloader/issues)
+
+### Q3: Can I directly use the Actions from the main repository?
+
+A: Due to permission restrictions, you cannot directly trigger Actions from the main repository. Please use the forked
+repository to execute the build process
+
 <h1>♥️ Support the Project</h1>
 <p>If <b>XHS-Downloader</b> has been helpful to you, please consider giving it a <b>Star</b> ⭐. Thank you for your support!</p>
 <table>
@@ -427,6 +523,22 @@ async def example():
 </tbody>
 </table>
 <p>If you are willing, you may consider making a donation to provide additional support for <b>XHS-Downloader</b>!</p>
+<h1>🌟 Contribution Guidelines</h1>
+<p><strong>Welcome to contributing to this project! To keep the codebase clean, efficient, and easy to maintain, please read the following guidelines carefully to ensure that your contributions can be accepted and integrated smoothly.</strong></p>
+<ul>
+<li>Before starting development, please pull the latest code from the <code>develop</code> branch as the basis for your modifications; this helps avoid merge conflicts and ensures your changes are based on the latest state of the project.</li>
+<li>If your changes involve multiple unrelated features or issues, please split them into several independent commits or pull requests.</li>
+<li>Each pull request should focus on a single feature or fix as much as possible, to facilitate code review and testing.</li>
+<li>Follow the existing coding style; make sure your code is consistent with the style already present in the project.</li>
+<li>Write code that is easy to read; add appropriate annotation to help others understand your intentions.</li>
+<li>Each commit should include a clear and concise commit message describing the changes made. The commit message should follow this format: <code>&lt;type&gt;: &lt;short description&gt;</code></li>
+<li>When you are ready to submit a pull request, please prioritize submitting them to the <code>develop</code> branch; this provides maintainers with a buffer zone for additional testing and review before final merging into the <code>master</code> branch.</li>
+</ul>
+<p><strong>Reference materials:</strong></p>
+<ul>
+<li><a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/">Contributor Covenant</a></li>
+<li><a href="https://opensource.guide/how-to-contribute/">How to Contribute to Open Source</a></li>
+</ul>
 <h1>✉️ Contact the Author</h1>
 <ul>
 <li>Author's Email：yonglelolu@foxmail.com</li>
