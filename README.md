@@ -1,18 +1,20 @@
 <div align="center">
-<img src="static/XHS-Downloader.png" alt="" height="256" width="256"><br>
+<img src="static/XHS-Downloader.png" alt="XHS-Downloader" height="256" width="256"><br>
 <h1>XHS-Downloader</h1>
 <p>简体中文 | <a href="README_EN.md">English</a></p>
 <a href="https://trendshift.io/repositories/5435" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5435" alt="JoeanAmier%2FXHS-Downloader | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 <br>
-<img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7a45">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=for-the-badge&color=9254de">
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7875">
-<img alt="Static Badge" src="https://img.shields.io/badge/UserScript-ffec3d?style=for-the-badge&logo=tampermonkey&logoColor=%2300485B">
+<img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=flat-square">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=flat-square&color=55efc4">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=flat-square&color=fda7df">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/JoeanAmier/XHS-Downloader?style=flat-square&color=a29bfe">
+<img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/JoeanAmier/XHS-Downloader?style=flat-square&color=48dbfb">
 <br>
-<img alt="Static Badge" src="https://img.shields.io/badge/Python-3.12-3498db?style=for-the-badge&logo=python&labelColor=fffa65">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/JoeanAmier/XHS-Downloader?style=for-the-badge&color=73d13d">
-<img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/JoeanAmier/XHS-Downloader?style=for-the-badge&color=40a9ff">
-<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=for-the-badge&color=f759ab">
+<img alt="Static Badge" src="https://img.shields.io/badge/Python-3.12-b8e994?style=flat-square&logo=python&labelColor=3dc1d3">
+<img alt="Static Badge" src="https://img.shields.io/badge/UserScript-ffec3d?style=flat-square&logo=tampermonkey&logoColor=%2300485B">
+<img src="https://img.shields.io/badge/Sourcery-enabled-884898?style=flat-square&color=1890ff" alt="">
+<img alt="Static Badge" src="https://img.shields.io/badge/Docker-badc58?style=flat-square&logo=docker">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=flat-square&color=ffdd59">
 </div>
 <br>
 <p>🔥 <b>小红书链接提取/作品采集工具</b>：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品链接、用户链接；采集小红书作品信息；提取小红书作品下载地址；下载小红书无水印作品文件！</p>
@@ -37,6 +39,8 @@
 <li>✅ 支持 API 调用功能</li>
 <li>✅ 支持文件断点续传下载</li>
 <li>✅ 智能识别作品文件类型</li>
+<li>✅ 支持设置作者备注</li>
+<li>✅ 自动更新作者昵称</li>
 </ul>
 <ul><a href="#user-scripts"><b>脚本功能</b></a>
 <li>✅ 下载小红书无水印作品文件</li>
@@ -51,11 +55,11 @@
 <p>⭐ XHS-Downloader 开发计划及进度可前往 <a href="https://github.com/users/JoeanAmier/projects/5">Projects</a> 查阅</p>
 <h1>📸 程序截图</h1>
 <p><b>🎥 点击图片观看演示视频</b></p>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN1.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图CN1.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN2.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图CN2.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图CN3.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图CN3.png" alt=""></a>
 <h1>🔗 支持链接</h1>
 <ul>
 <li><code>https://www.xiaohongshu.com/explore/作品ID?xsec_token=XXX</code></li>
@@ -70,8 +74,9 @@
 <p>如果仅需下载无水印作品文件，建议选择 <b>程序运行</b> 或 <b>Docker 运行</b>；如果有其他需求，建议选择 <b>源码运行</b>！</p>
 <p><code>2.2</code> 版本开始，项目功能无异常的情况下，无需额外处理 Cookie！</p>
 <h2>🖱 程序运行</h2>
-<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
-<p>⭐ 本项目包含手动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
+<p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 或者 <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
+<p>⭐ 本项目包含自动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
+<p>⭐ 自动构建可执行文件教程请查阅本文档的 <code>构建可执行文件指南</code> 部分；如果需要更加详细的图文教程，请 <a href="https://mp.weixin.qq.com/s/TorfoZKkf4-x8IBNLImNuw">查阅文章</a>！</p>
 <p><strong>注意：Mac OS 平台可执行文件 <code>main</code> 可能需要从终端命令行启动；受设备限制，Mac OS 平台可执行文件尚未经过测试，无法保证可用性！</strong></p>
 <p>若通过此方式使用程序，文件默认下载路径为：<code>.\_internal\Download</code>；配置文件路径为：<code>.\_internal\settings.json</code></p>
 <h2>⌨️ Docker 运行</h2>
@@ -80,11 +85,12 @@
 <ul>
 <li>方式一：使用 <code>Dockerfile</code> 文件构建镜像</li>
 <li>方式二：使用 <code>docker pull joeanamier/xhs-downloader</code> 命令拉取镜像</li>
+<li>方式三：使用 <code>docker pull ghcr.io/joeanamier/xhs-downloader</code> 命令拉取镜像</li>
 </ul>
 <li>创建容器</li>
 <ul>
-<li>TUI 模式：<code>docker run --name 容器名称(可选) -p 主机端口号:8000 -it joeanamier/xhs-downloader</code></li>
-<li>API 模式：<code>docker run --name 容器名称(可选) -p 主机端口号:8000 -it joeanamier/xhs-downloader python main.py server</code></li>
+<li>TUI 模式：<code>docker run --name 容器名称(可选) -p 主机端口号:5556 -v xhs_downloader_volume:/app -it joeanamier/xhs-downloader</code></li>
+<li>API 模式：<code>docker run --name 容器名称(可选) -p 主机端口号:5556 -v xhs_downloader_volume:/app -it joeanamier/xhs-downloader python main.py server</code></li>
 </ul>
 <li>运行容器
 <ul>
@@ -116,6 +122,7 @@
 <h1>🖥 服务器模式</h1>
 <p><b>启动：</b>运行命令：<code>python .\main.py server</code></p>
 <p><b>关闭：</b>按下 <code>Ctrl</code> + <code>C</code> 关闭服务器</p>
+<p>访问 <code>http://127.0.0.1:5556/docs</code> 或者 <code>http://127.0.0.1:5556/redoc</code>；你会看到自动生成的交互式 API 文档！</p>
 <p><b>请求接口：</b><code>/xhs/</code></p>
 <p><b>请求方法：</b><code>POST</code></p>
 <p><b>请求格式：</b><code>JSON</code></p>
@@ -152,7 +159,13 @@
 <td align="center">cookie</td>
 <td align="center">str</td>
 <td align="center">请求数据时使用的 Cookie；可选参数</td>
-<td align="center">配置文件 Cookie 值</td>
+<td align="center">配置文件 cookie 参数</td>
+</tr>
+<tr>
+<td align="center">proxy</td>
+<td align="center">str</td>
+<td align="center">请求数据时使用的代理；可选参数</td>
+<td align="center">配置文件 proxy 参数</td>
 </tr>
 <tr>
 <td align="center">skip</td>
@@ -164,18 +177,20 @@
 </table>
 <p><b>代码示例：</b></p>
 <pre>
-def api_demo():
-    server = "http://127.0.0.1:8000/xhs/"
+async def example_api():
+    """通过 API 设置参数，适合二次开发"""
+    server = "http://127.0.0.1:5556/xhs/"
     data = {
-        "url": "https://www.xiaohongshu.com/explore/123456789",
+        "url": "",  # 必需参数
         "download": True,
         "index": [
             3,
             6,
             9,
         ],
+        "proxy": "http://127.0.0.1:10808",
     }
-    response = requests.post(server, json=data)
+    response = post(server, json=data, timeout=10)
     print(response.json())
 </pre>
 <h1>📜 其他说明</h1>
@@ -186,19 +201,21 @@ def api_demo():
 <li>程序下载记录数据储存至 <code>./ExploreID.db</code> 文件</li>
 </ul>
 <h1 id="user-scripts">🕹 用户脚本</h1>
-<p>如果您的浏览器安装了 <a href="https://www.tampermonkey.net/">Tampermonkey</a> 浏览器扩展程序，可以添加 <a href="https://raw.githubusercontent.com/JoeanAmier/XHS-Downloader/master/static/XHS-Downloader.js">用户脚本</a>，无需下载安装即可体验项目功能！</p>
+<p>如果您的浏览器安装了 <a href="https://www.tampermonkey.net/">Tampermonkey</a> 浏览器扩展程序，可以添加 <a href="https://raw.githubusercontent.com/JoeanAmier/XHS-Downloader/master/static/XHS-Downloader.js">用户脚本</a>(右键单击复制链接)，无需下载安装即可体验项目功能！</p>
 <img src="static/screenshot/脚本安装教程.png" alt="">
-<p>脚本安装成功后，打开小红书页面，查看脚本说明，并根据提示操作。</p>
+<hr>
 <img src="static/screenshot/用户脚本截图1.png" alt="">
 <hr>
 <img src="static/screenshot/用户脚本截图2.png" alt="">
+<hr>
+<img src="static/screenshot/用户脚本截图3.png" alt="">
 <p>提示：使用 XHS-Downloader 用户脚本批量提取作品链接，搭配 XHS-Downloader 程序可以实现批量下载无水印作品文件！</p>
 <h2>📜 脚本说明</h2>
 <ul>
 <li>下载小红书无水印作品文件时，脚本需要花费时间处理文件，请等待片刻，请勿多次点击下载按钮</li>
 <li>无水印图片文件为 PNG 格式；无水印视频文件较大，可能需要较长的时间处理，页面跳转可能会导致下载失败</li>
 <li>提取账号发布、收藏、点赞、专辑作品链接时，脚本可以自动滚动页面直至加载全部作品</li>
-<li>提取推荐作品链接、搜索作品、用户链接时，脚本可以自动滚动指定次数加载更多内容，默认滚动次数：10 次</li>
+<li>提取推荐作品链接、搜索作品、用户链接时，脚本可以自动滚动指定次数加载更多内容，默认滚动次数：50 次</li>
 <li>自动滚动页面功能默认关闭；用户可以自由开启，并修改滚动页面次数，修改后立即生效</li>
 <li>如果未开启自动滚动页面功能，用户需要手动滚动页面以便加载更多内容后再进行其他操作</li>
 <li>支持作品文件打包下载；该功能默认开启，多个文件的作品将会以压缩包格式下载</li>
@@ -213,6 +230,7 @@ async def example():
     """通过代码设置参数，适合二次开发"""
     # 示例链接
     demo_link = "https://www.xiaohongshu.com/explore/XXX?xsec_token=XXX"
+
     # 实例对象
     work_path = "D:\\"  # 作品数据/文件保存根路径，默认值：项目根路径
     folder_name = "Download"  # 作品文件储存文件夹名称（自动创建），默认值：Download
@@ -224,16 +242,20 @@ async def example():
     chunk = 1024 * 1024 * 10  # 下载文件时，每次从服务器获取的数据块大小，单位：字节
     max_retry = 2  # 请求数据失败时，重试的最大次数，单位：秒，默认值：5
     record_data = False  # 是否保存作品数据至文件
-    image_format = "WEBP"  # 图文作品文件下载格式，支持：PNG、WEBP
+    image_format = "WEBP"  # 图文作品文件下载格式，支持：AUTO、PNG、WEBP、JPEG、HEIC
     folder_mode = False  # 是否将每个作品的文件储存至单独的文件夹
     image_download = True  # 图文作品文件下载开关
     video_download = True  # 视频作品文件下载开关
     live_download = False  # 图文动图文件下载开关
     download_record = True  # 是否记录下载成功的作品 ID
     language = "zh_CN"  # 设置程序提示语言
+    author_archive = True  # 是否将每个作者的作品存至单独的文件夹
+    write_mtime = True  # 是否将作品文件的 修改时间 修改为作品的发布时间
     read_cookie = None  # 读取浏览器 Cookie，支持设置浏览器名称（字符串）或者浏览器序号（整数），设置为 None 代表不读取
+
     # async with XHS() as xhs:
     #     pass  # 使用默认参数
+
     async with XHS(
         work_path=work_path,
         folder_name=folder_name,
@@ -253,11 +275,23 @@ async def example():
         download_record=download_record,
         language=language,
         read_cookie=read_cookie,
+        author_archive=author_archive,
+        write_mtime=write_mtime,
     ) as xhs:  # 使用自定义参数
         download = True  # 是否下载作品文件，默认值：False
         # 返回作品详细信息，包括下载地址
         # 获取数据失败时返回空字典
-        print(await xhs.extract(demo_link, download, index=[1, 2]))
+        print(
+            await xhs.extract(
+                demo_link,
+                download,
+                index=[
+                    1,
+                    2,
+                    5,
+                ],
+            )
+        )
 </pre>
 <h1>📋 读取剪贴板</h1>
 <p>项目使用 <code>pyperclip</code> 实现读取剪贴板功能，该模块在不同的系统上会有差异。</p>
@@ -278,6 +312,12 @@ async def example():
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="center">mapping_data</td>
+<td align="center">str: str</td>
+<td align="center"><sup><a href="#author_archive">#</a></sup>作者别名映射表，格式：<code>作者ID: 作者别名</code></td>
+<td align="center">无</td>
+</tr>
 <tr>
 <td align="center">work_path</td>
 <td align="center">str</td>
@@ -341,7 +381,7 @@ async def example():
 <tr>
 <td align="center">image_format</td>
 <td align="center">str</td>
-<td align="center">图文作品文件下载格式，支持：<code>PNG</code>、<code>WEBP</code><br><strong>该参数影响下载图片时所用的接口，并非固定图片格式！</strong></td>
+<td align="center">图文作品文件下载格式，支持：<code>AUTO</code>、<code>PNG</code>、<code>WEBP</code>、<code>JPEG</code>、<code>HEIC</code><br><strong>部分作品没有 <code>HEIC</code> 格式的文件，此时下载的文件可能为 <code>WEBP</code> 格式！</strong><br><strong>设置为 <code>AUTO</code> 时表示动态格式，实际格式取决于服务器响应数据！</strong></td>
 <td align="center">PNG</td>
 </tr>
 <tr>
@@ -375,6 +415,18 @@ async def example():
 <td align="center">true</td>
 </tr>
 <tr>
+<td align="center">author_archive</td>
+<td align="center">bool</td>
+<td align="center"><sup><a href="#author_archive">#</a></sup>是否将每个作者的作品储存至单独的文件夹；文件夹名称为 <code>作者ID_作者昵称</code></td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">write_mtime</td>
+<td align="center">bool</td>
+<td align="center">是否将作品文件的 <code>修改时间</code> 属性修改为作品的发布时间</td>
+<td align="center">false</td>
+</tr>
+<tr>
 <td align="center">language</td>
 <td align="center">str</td>
 <td align="center">设置程序语言，目前支持：<code>zh_CN</code>、<code>en_US</code></td>
@@ -382,6 +434,12 @@ async def example():
 </tr>
 </tbody>
 </table>
+<hr>
+<div id="author_archive">
+<p>如果 <code>author_archive</code> 参数设置为 <code>true</code>，程序会把每个作者的作品储存至单独的文件夹；当作者的昵称发生变化时，程序会自动更新已下载作品文件名称中的作者昵称部分！</p>
+<p>除此之外，你还可以通过设置 <code>mapping_data</code> 参数为某个作者设置别名；如果对某个作者设置了别名，程序会使用你设置的作者别名去替代作者昵称！</p>
+</div>
+<hr>
 <p><b>其他说明：<code>user_agent</code>参数获取示例；强烈建议根据实际浏览器信息进行设置！</b></p>
 <img src="static/screenshot/请求头示例图.png" alt="">
 <h1>🌐 Cookie</h1>
@@ -432,7 +490,7 @@ async def example():
 ### 3. 手动触发打包流程
 
 1. 在您 Fork 的仓库中，点击顶部的 **Actions** 选项卡
-2. 找到名为 **手动构建可执行文件** 的工作流
+2. 找到名为 **构建可执行文件** 的工作流
 3. 点击右侧的 **Run workflow** 按钮：
     - 选择 **master** 或者 **develop** 分支
     - 点击 **Run workflow**
@@ -486,6 +544,10 @@ A:
 
 A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fork 仓库的方式执行打包流程
 
+<h1>⭐ Star 趋势</h1>
+<p>
+<img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JoeanAmier/XHS-Downloader&amp;type=Timeline"/>
+</p>
 <h1>♥️ 支持项目</h1>
 <p>如果 <b>XHS-Downloader</b> 对您有帮助，请考虑为它点个 <b>Star</b> ⭐，感谢您的支持！</p>
 <table>
@@ -508,11 +570,12 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 <li>在开始开发前，请从 <code>develop</code> 分支拉取最新的代码，以此为基础进行修改；这有助于避免合并冲突并保证您的改动基于最新的项目状态。</li>
 <li>如果您的更改涉及多个不相关的功能或问题，请将它们分成多个独立的提交或拉取请求。</li>
 <li>每个拉取请求应尽可能专注于单一功能或修复，以便于代码审查和测试。</li>
-<li>遵循现有的代码风格；请确保您的代码与项目中已有的代码风格保持一致。</li>
+<li>遵循现有的代码风格；请确保您的代码与项目中已有的代码风格保持一致；建议使用 Ruff 工具保持代码格式规范。</li>
 <li>编写可读性强的代码；添加适当的注释帮助他人理解您的意图。</li>
 <li>每个提交都应该包含一个清晰、简洁的提交信息，以描述所做的更改。提交信息应遵循以下格式：<code>&lt;类型&gt;: &lt;简短描述&gt;</code></li>
 <li>当您准备提交拉取请求时，请优先将它们提交到 <code>develop</code> 分支；这是为了给维护者一个缓冲区，在最终合并到 <code>master</code>
 分支之前进行额外的测试和审查。</li>
+<li>建议在开发前或遇到疑问时与作者沟通，确保开发方向一致，避免重复劳动或无效提交。</li>
 </ul>
 <p><strong>参考资料：</strong></p>
 <ul>
@@ -530,26 +593,44 @@ A: 由于权限限制，您无法直接触发主仓库的 Actions。请通过 Fo
 <p><b>说明：</b>QQ 群聊仅限于讨论项目使用问题，严禁发布任何广告，严禁讨论任何账号交易、账号流量、流量变现、灰色产业等相关的内容！</p>
 <p>✨ <b>作者的其他开源项目：</b></p>
 <ul>
-<li><b>TikTokDownloader（抖音 / TikTok）</b>：<a href="https://github.com/JoeanAmier/TikTokDownloader">https://github.com/JoeanAmier/TikTokDownloader</a></li>
-<li><b>KS-Downloader（快手）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
+<li><b>DouK-Downloader（抖音、TikTok）</b>：<a href="https://github.com/JoeanAmier/TikTokDownloader">https://github.com/JoeanAmier/TikTokDownloader</a></li>
+<li><b>KS-Downloader（快手、KuaiShou）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
 </ul>
-<h1>💰 项目赞助</h1>
-<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.svg" alt="PyCharm logo">
-<p><b>JetBrains</b> 支持全球开源社区认可的活跃项目，并为非商业开发提供免费许可证。</p>
+
+# 💰 项目赞助
+
+## JetBrains 工具
+
+![PyCharm logo](https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.svg)
+
+**JetBrains** 支持全球开源社区认可的活跃项目，并为非商业开发提供免费许可证。
+
+***
+
+## DartNode
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
+
 <h1>⚠️ 免责声明</h1>
-<ul>
+<ol>
 <li>使用者对本项目的使用由使用者自行决定，并自行承担风险。作者对使用者使用本项目所产生的任何损失、责任、或风险概不负责。</li>
-<li>本项目的作者提供的代码和功能是基于现有知识和技术的开发成果。作者尽力确保代码的正确性和安全性，但不保证代码完全没有错误或缺陷。</li>
+<li>本项目的作者提供的代码和功能是基于现有知识和技术的开发成果。作者按现有技术水平努力确保代码的正确性和安全性，但不保证代码完全没有错误或缺陷。</li>
+<li>本项目依赖的所有第三方库、插件或服务各自遵循其原始开源或商业许可，使用者需自行查阅并遵守相应协议，作者不对第三方组件的稳定性、安全性及合规性承担任何责任。</li>
 <li>使用者在使用本项目时必须严格遵守 <a href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU
     General Public License v3.0</a> 的要求，并在适当的地方注明使用了 <a
         href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU General Public License
     v3.0</a> 的代码。
 </li>
-<li>使用者在任何情况下均不得将本项目的作者、贡献者或其他相关方与使用者的使用行为联系起来，或要求其对使用者使用本项目所产生的任何损失或损害负责。</li>
 <li>使用者在使用本项目的代码和功能时，必须自行研究相关法律法规，并确保其使用行为合法合规。任何因违反法律法规而导致的法律责任和风险，均由使用者自行承担。</li>
+<li>使用者不得使用本工具从事任何侵犯知识产权的行为，包括但不限于未经授权下载、传播受版权保护的内容，开发者不参与、不支持、不认可任何非法内容的获取或分发。</li>
+<li>本项目不对使用者涉及的数据收集、存储、传输等处理活动的合规性承担责任。使用者应自行遵守相关法律法规，确保处理行为合法正当；因违规操作导致的法律责任由使用者自行承担。</li>
+<li>使用者在任何情况下均不得将本项目的作者、贡献者或其他相关方与使用者的使用行为联系起来，或要求其对使用者使用本项目所产生的任何损失或损害负责。</li>
 <li>本项目的作者不会提供 XHS-Downloader 项目的付费版本，也不会提供与 XHS-Downloader 项目相关的任何商业服务。</li>
 <li>基于本项目进行的任何二次开发、修改或编译的程序与原创作者无关，原创作者不承担与二次开发行为或其结果相关的任何责任，使用者应自行对因二次开发可能带来的各种情况负全部责任。</li>
-</ul>
+<li>本项目不授予使用者任何专利许可；若使用本项目导致专利纠纷或侵权，使用者自行承担全部风险和责任。未经作者或权利人书面授权，不得使用本项目进行任何商业宣传、推广或再授权。</li>
+<li>作者保留随时终止向任何违反本声明的使用者提供服务的权利，并可能要求其销毁已获取的代码及衍生作品。</li>
+<li>作者保留在不另行通知的情况下更新本声明的权利，使用者持续使用即视为接受修订后的条款。</li>
+</ol>
 <b>在使用本项目的代码和功能之前，请您认真考虑并接受以上免责声明。如果您对上述声明有任何疑问或不同意，请不要使用本项目的代码和功能。如果您使用了本项目的代码和功能，则视为您已完全理解并接受上述免责声明，并自愿承担使用本项目的一切风险和后果。</b>
 
 # 💡 项目参考

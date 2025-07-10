@@ -1,18 +1,20 @@
 <div align="center">
-<img src="static/XHS-Downloader.png" alt="" height="256" width="256"><br>
+<img src="static/XHS-Downloader.png" alt="XHS-Downloader" height="256" width="256"><br>
 <h1>XHS-Downloader</h1>
 <p><a href="README.md">简体中文</a> | English</p>
 <a href="https://trendshift.io/repositories/5435" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5435" alt="JoeanAmier%2FXHS-Downloader | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 <br>
-<img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7a45">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=for-the-badge&color=9254de">
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=for-the-badge&color=ff7875">
-<img alt="Static Badge" src="https://img.shields.io/badge/UserScript-ffec3d?style=for-the-badge&logo=tampermonkey&logoColor=%2300485B">
+<img alt="GitHub" src="https://img.shields.io/github/license/JoeanAmier/XHS-Downloader?style=flat-square">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/JoeanAmier/XHS-Downloader?style=flat-square&color=55efc4">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/JoeanAmier/XHS-Downloader?style=flat-square&color=fda7df">
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/JoeanAmier/XHS-Downloader?style=flat-square&color=a29bfe">
+<img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/JoeanAmier/XHS-Downloader?style=flat-square&color=48dbfb">
 <br>
-<img alt="Static Badge" src="https://img.shields.io/badge/Python-3.12-3498db?style=for-the-badge&logo=python&labelColor=fffa65">
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/JoeanAmier/XHS-Downloader?style=for-the-badge&color=73d13d">
-<img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/JoeanAmier/XHS-Downloader?style=for-the-badge&color=40a9ff">
-<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=for-the-badge&color=f759ab">
+<img alt="Static Badge" src="https://img.shields.io/badge/Python-3.12-b8e994?style=flat-square&logo=python&labelColor=3dc1d3">
+<img alt="Static Badge" src="https://img.shields.io/badge/UserScript-ffec3d?style=flat-square&logo=tampermonkey&logoColor=%2300485B">
+<img src="https://img.shields.io/badge/Sourcery-enabled-884898?style=flat-square&color=1890ff" alt="">
+<img alt="Static Badge" src="https://img.shields.io/badge/Docker-badc58?style=flat-square&logo=docker">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=flat-square&color=ffdd59">
 </div>
 <br>
 <p>🔥 <b>RedNote Link Extraction/Content Collection Tool</b>：Extract account-published, favorites, and liked works links; extract search result works links and user links; collect RedNote works information; extract RedNote works download addresses; download RedNote watermark-free works files!</p>
@@ -38,6 +40,8 @@
 <li>✅ Support API call functionality</li>
 <li>✅ Support file breakpoint resume download</li>
 <li>✅ Intelligent recognition of works file types</li>
+<li>✅ Supports author alias configuration</li>
+<li>✅ Automatic author nickname updates</li>
 </ul>
 <ul><a href="#user-scripts"><b>Script Features</b></a>
 <li>✅ Download RedNote watermark-free works files</li>
@@ -52,11 +56,11 @@
 <p>⭐ The development plan and progress of XHS-Downloader can be found at <a href="https://github.com/users/JoeanAmier/projects/5">Projects</a></p>
 <h1>📸 Program Screenshots</h1>
 <p><b>🎥 Click the images to watch the demo video</b></p>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN1.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图EN1.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN2.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图EN2.png" alt=""></a>
 <hr>
-<a href="https://www.bilibili.com/video/BV1c56BYJEFm/"><img src="static/screenshot/程序运行截图EN3.png" alt=""></a>
+<a href="https://www.bilibili.com/video/BV1v1LwzsEi9/"><img src="static/screenshot/程序运行截图EN3.png" alt=""></a>
 <h1>🔗 Supported Links</h1>
 <ul>
 <li><code>https://www.xiaohongshu.com/explore/WorksID?xsec_token=XXX</code></li>
@@ -71,8 +75,9 @@
 <p>If you only need to download watermark-free works files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
 <p>Starting from version <code>2.2</code>, if there are no abnormalities in project functionality, there is no need to handle cookies separately!</p>
 <h2>🖱 Program Run</h2>
-<p>⭐ Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
-<p>⭐ This project includes GitHub Actions for manually building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
+<p>⭐ Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> or <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
+<p>⭐ This project includes GitHub Actions for automatic building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
+<p>⭐ For the automatic building executable files tutorial, please refer to the <code>Build of Executable File Guide</code> section of this document. If you need a more detailed step-by-step tutorial with illustrations, please <a href="https://mp.weixin.qq.com/s/TorfoZKkf4-x8IBNLImNuw">check out this article</a>!</p>
 <p><strong>Note: The executable file <code>main</code> for Mac OS may need to be launched from the terminal command line; Due to device limitations, the Mac OS executable file has not been tested and its availability cannot be guaranteed!</strong></p>
 <p>If you use the program in this way, the default download path for files is: <code>.\_internal\Download</code>; the configuration file path is: <code>.\_internal\settings.json</code></p>
 <h2>⌨️ Docker Run</h2>
@@ -81,11 +86,12 @@
 <ul>
 <li>Method 1: Build the image using the <code>Dockerfile</code></li>
 <li>Method 2: Pull the image using the command <code>docker pull joeanamier/xhs-downloader</code></li>
+<li>Method 3: Pull the image using the command <code>docker pull ghcr.io/joeanamier/xhs-downloader</code></li>
 </ul>
 <li>Create Container</li>
 <ul>
-<li>TUI Mode: <code>docker run --name ContainerName(optional) -p HostPort:8000 -it joeanamier/xhs-downloader</code></li>
-<li>API Mode: <code>docker run --name ContainerName(optional) -p HostPort:8000 -it joeanamier/xhs-downloader python main.py server</code></li>
+<li>TUI Mode: <code>docker run --name ContainerName(optional) -p HostPort:5556 -v xhs_downloader_volume:/app -it joeanamier/xhs-downloader</code></li>
+<li>API Mode: <code>docker run --name ContainerName(optional) -p HostPort:5556 -v xhs_downloader_volume:/app -it joeanamier/xhs-downloader python main.py server</code></li>
 </ul>
 <li>Run Container
 <ul>
@@ -117,6 +123,7 @@
 <h1>🖥 Server Mode</h1>
 <p><b>Start:</b> Run the command: <code>python .\main.py server</code></p>
 <p><b>Stop:</b> Press <code>Ctrl</code> + <code>C</code> to stop the server</p>
+<p>Open <code>http://127.0.0.1:5556/docs</code> or <code>http://127.0.0.1:5556/redoc</code>; you will see automatically generated interactive API documentation!</p>
 <p><b>Request endpoint:</b>
 <code>/xhs/</code></p>
 <p><b>Request method:</b>
@@ -155,8 +162,14 @@
 <tr>
 <td align="center">cookie</td>
 <td align="center">str</td>
-<td align="center">Cookies used when requesting data; Optional parameter</td>
-<td align="center">Settings Cookie Value</td>
+<td align="center">Cookie used when requesting data; Optional parameter</td>
+<td align="center">Settings cookie Value</td>
+</tr>
+<tr>
+<td align="center">proxy</td>
+<td align="center">str</td>
+<td align="center">Proxy used when requesting data; Optional parameter</td>
+<td align="center">Settings proxy Value</td>
 </tr>
 <tr>
 <td align="center">skip</td>
@@ -168,18 +181,20 @@
 </table>
 <p><b>Code example:</b></p>
 <pre>
-def api_demo():
-    server = "http://127.0.0.1:8000/xhs/"
+async def example_api():
+    """通过 API 设置参数，适合二次开发"""
+    server = "http://127.0.0.1:5556/xhs/"
     data = {
-        "url": "https://www.xiaohongshu.com/explore/123456789",
+        "url": "",  # 必需参数
         "download": True,
         "index": [
             3,
             6,
             9,
         ],
+        "proxy": "http://127.0.0.1:10808",
     }
-    response = requests.post(server, json=data)
+    response = post(server, json=data, timeout=10)
     print(response.json())
 </pre>
 <h1>📜 Others</h1>
@@ -190,19 +205,23 @@ def api_demo():
 <li>The program's download records will be stored in the <code>./ExploreID.db</code> file</li>
 </ul>
 <h1 id="user-scripts">🕹 User Script</h1>
-<p>If your browser has the <a href="https://www.tampermonkey.net/">Tampermonkey</a> browser extension installed, you can add the <a href="https://raw.githubusercontent.com/JoeanAmier/XHS-Downloader/master/static/XHS-Downloader.js">user script</a> to experience the project features without needing to download or install anything!</p>
+<p>If your browser has the <a href="https://www.tampermonkey.net/">Tampermonkey</a> browser extension installed, you can add the <a href="https://raw.githubusercontent.com/JoeanAmier/XHS-Downloader/master/static/XHS-Downloader.js">user script</a>(Right click to copy link) to experience the project features without needing to download or install anything!</p>
 <img src="static/screenshot/脚本安装教程.png" alt="">
 <p>After successfully installing the script, open the RedNote page, check the script instructions, and follow the prompts to operate.</p>
+<img src="static/screenshot/脚本安装教程.png" alt="">
+<hr>
 <img src="static/screenshot/用户脚本截图1.png" alt="">
 <hr>
 <img src="static/screenshot/用户脚本截图2.png" alt="">
+<hr>
+<img src="static/screenshot/用户脚本截图3.png" alt="">
 <p>Note: Using the XHS-Downloader user script to batch extract works links, in combination with the XHS-Downloader program, can achieve batch downloading of watermark-free works files!</p>
 <h2>📜 Script Instructions</h2>
 <ul>
 <li>When downloading watermark-free works from Xiaohongshu, the script requires time to process the files. Please wait for a moment and do not click the download button multiple times.</li>
 <li>Watermark-free image files are in PNG format; watermark-free video files are larger and may take longer to process. Page redirects may cause download failures.</li>
 <li>When extracting links for posts, collects, likes, and board from an account, the script can automatically scroll the page until all works are loaded.</li>
-<li>When extracting recommended works links, search works, and user links, the script can automatically scroll a specified number of times to load more content. The default number of page scrolls is 10.</li>
+<li>When extracting recommended works links, search works, and user links, the script can automatically scroll a specified number of times to load more content. The default number of page scrolls is 50.</li>
 <li>The automatic scrolling page function is turned off by default; Users can freely open and modify the number of times the page is scrolled, and the modification will take effect immediately.</li>
 <li>If the automatic page scroll feature is not enabled, users need to manually scroll the page to load more content before performing other actions.</li>
 <li>Support packaging and downloading of work files; This feature is enabled by default, and works from multiple files will be downloaded in compressed file format</li>
@@ -217,6 +236,7 @@ async def example():
     """通过代码设置参数，适合二次开发"""
     # 示例链接
     demo_link = "https://www.xiaohongshu.com/explore/XXX?xsec_token=XXX"
+
     # 实例对象
     work_path = "D:\\"  # 作品数据/文件保存根路径，默认值：项目根路径
     folder_name = "Download"  # 作品文件储存文件夹名称（自动创建），默认值：Download
@@ -228,16 +248,20 @@ async def example():
     chunk = 1024 * 1024 * 10  # 下载文件时，每次从服务器获取的数据块大小，单位：字节
     max_retry = 2  # 请求数据失败时，重试的最大次数，单位：秒，默认值：5
     record_data = False  # 是否保存作品数据至文件
-    image_format = "WEBP"  # 图文作品文件下载格式，支持：PNG、WEBP
+    image_format = "WEBP"  # 图文作品文件下载格式，支持：AUTO、PNG、WEBP、JPEG、HEIC
     folder_mode = False  # 是否将每个作品的文件储存至单独的文件夹
     image_download = True  # 图文作品文件下载开关
     video_download = True  # 视频作品文件下载开关
     live_download = False  # 图文动图文件下载开关
     download_record = True  # 是否记录下载成功的作品 ID
     language = "zh_CN"  # 设置程序提示语言
+    author_archive = True  # 是否将每个作者的作品存至单独的文件夹
+    write_mtime = True  # 是否将作品文件的 修改时间 修改为作品的发布时间
     read_cookie = None  # 读取浏览器 Cookie，支持设置浏览器名称（字符串）或者浏览器序号（整数），设置为 None 代表不读取
+
     # async with XHS() as xhs:
     #     pass  # 使用默认参数
+
     async with XHS(
         work_path=work_path,
         folder_name=folder_name,
@@ -257,11 +281,24 @@ async def example():
         download_record=download_record,
         language=language,
         read_cookie=read_cookie,
+        author_archive=author_archive,
+        write_mtime=write_mtime,
     ) as xhs:  # 使用自定义参数
         download = True  # 是否下载作品文件，默认值：False
         # 返回作品详细信息，包括下载地址
         # 获取数据失败时返回空字典
-        print(await xhs.extract(demo_link, download, index=[1, 2]))
+        print(
+            await xhs.extract(
+                demo_link,
+                download,
+                index=[
+                    1,
+                    2,
+                    5,
+                ],
+            )
+        )
+
 </pre>
 <h1>📋 Read Clipboard</h1>
 <p>The project uses <code>pyperclip</code> to implement clipboard reading functionality, which varies across different systems.</p>
@@ -282,6 +319,12 @@ async def example():
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="center">mapping_data</td>
+<td align="center">str: str</td>
+<td align="center"><sup><a href="#author_archive">#</a></sup>Author alias mapping data, format: <code>author ID: author alias</code></td>
+<td align="center">null</td>
+</tr>
 <tr>
 <td align="center">work_path</td>
 <td align="center">str</td>
@@ -345,13 +388,13 @@ async def example():
 <tr>
 <td align="center">image_format</td>
 <td align="center">str</td>
-<td align="center">Download format for text and image works files, supported formats: <code>PNG</code>, <code>WEBP</code><br><strong>This parameter affects the API used when downloading images, not the fixed image format!</strong></td>
+<td align="center">Download format for image works files, supported: <code>AUTO</code>、<code>PNG</code>、<code>WEBP</code>、<code>JPEG</code>、<code>HEIC</code><br><strong>Some works do not have files in HEIC format, and the downloaded files may be in WEBP format</strong><br><strong>When set to<code>AUTO</code>, it represents dynamic format, and the actual format depends on the server's response data</strong></td>
 <td align="center">PNG</td>
 </tr>
 <tr>
 <td align="center">image_download</td>
 <td align="center">bool</td>
-<td align="center">Switch for downloading text and image works files</td>
+<td align="center">Switch for downloading image works files</td>
 <td align="center">true</td>
 </tr>
 <tr>
@@ -379,6 +422,18 @@ async def example():
 <td align="center">true</td>
 </tr>
 <tr>
+<td align="center">author_archive</td>
+<td align="center">bool</td>
+<td align="center"><sup><a href="#author_archive">#</a></sup>Whether to save each author's works into a separate folder; The folder name is <code>authorID_nickname</code></td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="center">write_mtime</td>
+<td align="center">bool</td>
+<td align="center">Whether to modify the <code>modified time</code> attribute of the works file to the publication time of the works.</td>
+<td align="center">false</td>
+</tr>
+<tr>
 <td align="center">language</td>
 <td align="center">str</td>
 <td align="center">Set program language. Currently supported: <code>zh_CN</code>, <code>en_US</code></td>
@@ -386,6 +441,7 @@ async def example():
 </tr>
 </tbody>
 </table>
+<hr>
 <div id="fields">
 <p>name_format instructions (Currently only supports Chinese values) :</p>
 <ul>
@@ -404,6 +460,12 @@ async def example():
 <li><code>作者ID</code>: Author ID</li>
 </ul>
 </div>
+<hr>
+<div id="author_archive">
+<p>When <code>author_archive</code> is set to <code>true</code>, the program will store each author's works in dedicated folders. If an author's nickname changes, the program automatically updates the nickname portion in existing downloaded filenames!</p>
+<p>Additionally, you can configure author aliases through the <code>mapping_data</code> parameter. When an alias is set, the program will use your custom alias instead of the original nickname in filenames!</p>
+</div>
+<hr>
 <p><b>Additional Notes: The parameters <code>user_agent</code> examples are provided for reference; Strongly recommend setting according to actual browser information!</b></p>
 <img src="static/screenshot/请求头示例图.png" alt="">
 <h1>🌐 Cookie</h1>
@@ -455,7 +517,7 @@ the program based on the latest source code!
 ### 3. Manually Trigger the Build Process
 
 1. In your forked repository, click the **Actions** tab at the top
-2. Find the workflow named **Manual Build of Executable File**
+2. Find the workflow named **构建可执行文件**
 3. Click the **Run workflow** button on the right:
     - Select the **master** or **develop** branch
     - Click **Run workflow**
@@ -514,6 +576,10 @@ A:
 A: Due to permission restrictions, you cannot directly trigger Actions from the main repository. Please use the forked
 repository to execute the build process
 
+<h1>⭐ Star History</h1>
+<p>
+<img alt="Star History Chart" src="https://api.star-history.com/svg?repos=JoeanAmier/XHS-Downloader&amp;type=Timeline"/>
+</p>
 <h1>♥️ Support the Project</h1>
 <p>If <b>XHS-Downloader</b> has been helpful to you, please consider giving it a <b>Star</b> ⭐. Thank you for your support!</p>
 <table>
@@ -536,10 +602,11 @@ repository to execute the build process
 <li>Before starting development, please pull the latest code from the <code>develop</code> branch as the basis for your modifications; this helps avoid merge conflicts and ensures your changes are based on the latest state of the project.</li>
 <li>If your changes involve multiple unrelated features or issues, please split them into several independent commits or pull requests.</li>
 <li>Each pull request should focus on a single feature or fix as much as possible, to facilitate code review and testing.</li>
-<li>Follow the existing coding style; make sure your code is consistent with the style already present in the project.</li>
+<li>Follow the existing coding style; make sure your code is consistent with the style already present in the project; please use the Ruff tool to maintain code formatting standards.</li>
 <li>Write code that is easy to read; add appropriate annotation to help others understand your intentions.</li>
 <li>Each commit should include a clear and concise commit message describing the changes made. The commit message should follow this format: <code>&lt;type&gt;: &lt;short description&gt;</code></li>
 <li>When you are ready to submit a pull request, please prioritize submitting them to the <code>develop</code> branch; this provides maintainers with a buffer zone for additional testing and review before final merging into the <code>master</code> branch.</li>
+<li>It is recommended to communicate with the author before starting development or when encountering questions to ensure alignment in direction and avoid redundant efforts or unnecessary commits.</li>
 </ul>
 <p><strong>Reference materials:</strong></p>
 <ul>
@@ -554,26 +621,40 @@ repository to execute the build process
 </ul>
 <p>✨ <b>Other Open Source Projects by the Author:</b></p>
 <ul>
-<li><b>TikTokDownloader（抖音 / TikTok）</b>：<a href="https://github.com/JoeanAmier/TikTokDownloader">https://github.com/JoeanAmier/TikTokDownloader</a></li>
-<li><b>KS-Downloader（快手）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
+<li><b>DouK-Downloader（抖音、TikTok）</b>：<a href="https://github.com/JoeanAmier/TikTokDownloader">https://github.com/JoeanAmier/TikTokDownloader</a></li>
+<li><b>KS-Downloader（快手、KuaiShou）</b>：<a href="https://github.com/JoeanAmier/KS-Downloader">https://github.com/JoeanAmier/KS-Downloader</a></li>
 </ul>
-<h1>💰 Sponsor</h1>
-<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.svg" alt="PyCharm logo">
+
+# 💰 Project Sponsorship
+
+## JetBrains Tools
+
+![PyCharm logo](https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.svg)
+
 <p><b>JetBrains</b> support active projects recognized within the global open-source community with complimentary licenses for non-commercial development.</p>
+
+***
+
+## DartNode
+
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
+
 <h1>⚠️ Disclaimer</h1>
-<ul>
-<li>Users decide on their own how to use this project and bear the risks themselves. The author is not responsible for any losses, liabilities, or risks incurred by users in the use of this project</li>
-<li>The code and functionalities provided by the author of this project are developed based on existing knowledge and technology. The author strives to ensure the correctness and security of the code but does not guarantee that the code is completely error-free or defect-free.</li>
-<li>Users must strictly adhere to the provisions in <a href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU
-    General Public License v3.0</a> , and appropriately mention the use of code adhering <a
-        href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU General Public License
-    v3.0</a>.
-</li>
-<li>Under no circumstances shall users associate the author of this project, contributors, or other related parties with the user's usage behavior, or demand that they be held responsible for any losses or damages incurred by the user's use of this project.</li>
-<li>Users must independently study relevant laws and regulations when using the code and functionalities of this project and ensure that their usage is legal and compliant. Users are solely responsible for any legal liability and risks resulting from violations of laws and regulations.</li>
+<ol>
+<li>The user's use of this project is entirely at their own discretion and responsibility. The author assumes no liability for any losses, claims, or risks arising from the user's use of this project.</li>
+<li>The code and functionalities provided by the author of this project are based on current knowledge and technological developments. The author strives to ensure the correctness and security of the code according to existing technical capabilities but does not guarantee that the code is entirely free of errors or defects.</li>
+<li>All third-party libraries, plugins, or services relied upon by this project follow their respective open-source or commercial licenses. Users must review and comply with those license agreements. The author assumes no responsibility for the stability, security, or compliance of third-party components.</li>
+<li>Users must strictly comply with the requirements of the <a href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a> when using this project and properly indicate that the code was used under the <a href="https://github.com/JoeanAmier/XHS-Downloader/blob/master/LICENSE">GNU General Public License v3.0</a>.</li>
+<li>When using the code and features of this project, users must independently research relevant laws and regulations and ensure their actions are legal and compliant. Any legal liabilities or risks arising from violations of laws and regulations shall be borne solely by the user.</li>
+<li>Users must not use this tool to engage in any activities that infringe intellectual property rights, including but not limited to downloading or distributing copyright-protected content without authorization. The developers do not participate in, support, or endorse any unauthorized acquisition or distribution of illegal content.</li>
+<li>This project assumes no responsibility for the compliance of any data processing activities (including collection, storage, and transmission) conducted by users. Users must comply with relevant laws and regulations and ensure that their processing activities are lawful and proper. Legal liabilities resulting from non-compliant operations shall be borne by the user.</li>
+<li>Under no circumstances may users associate the author, contributors, or other related parties of this project with their usage of the project, nor may they hold these parties responsible for any loss or damage arising from such usage.</li>
 <li>The author of this project will not provide a paid version of the XHS-Downloader project, nor will they offer any commercial services related to the XHS-Downloader project.</li>
-<li>Any secondary development, modification, or compilation of the program based on this project is unrelated to the original author. The original author is not responsible for any consequences related to secondary development or its results. Users should take full responsibility for any situations that may arise from secondary development on their own.</li>
-</ul>
+<li>Any secondary development, modification, or compilation based on this project is unrelated to the original author. The original author assumes no liability for any consequences resulting from such secondary development. Users bear full responsibility for all outcomes arising from such modifications.</li>
+<li>This project grants no patent licenses; if the use of this project leads to patent disputes or infringement, the user bears all associated risks and responsibilities. Without written authorization from the author or rights holder, users may not use this project for any commercial promotion, marketing, or re-licensing.</li>
+<li>The author reserves the right to terminate service to any user who violates this disclaimer at any time and may require them to destroy all obtained code and derivative works.</li>
+<li>The author reserves the right to update this disclaimer at any time without prior notice. Continued use of the project constitutes acceptance of the revised terms.</li>
+</ol>
 <b>Before using the code and functionalities of this project, please carefully consider and accept the above disclaimer. If you have any questions or disagree with the statement, please do not use the code and functionalities of this project. If you use the code and functionalities of this project, it is considered that you fully understand and accept the above disclaimer, and willingly assume all risks and consequences associated with the use of this project.</b>
 
 # 💡 Project References

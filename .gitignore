@@ -44,3 +44,10 @@ ExploreID.db
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+/.venv/
+/.ruff_cache/
+*.db
+*.json
+/Temp/
+!.github/workflows/*.yaml

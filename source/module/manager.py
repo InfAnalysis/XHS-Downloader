@@ -1,22 +1,21 @@
 from pathlib import Path
-from re import compile
-from re import sub
-from shutil import move
-from shutil import rmtree
-
-from httpx import AsyncClient
-from httpx import AsyncHTTPTransport
-from httpx import HTTPStatusError
-from httpx import RequestError
-from httpx import TimeoutException
-from httpx import get
+from re import compile, sub
+from shutil import move, rmtree
+from os import utime
+from httpx import (
+    AsyncClient,
+    AsyncHTTPTransport,
+    HTTPStatusError,
+    RequestError,
+    TimeoutException,
+    get,
+)
 
 from source.expansion import remove_empty_directories
-from .static import HEADERS
-from .static import USERAGENT
-from .static import WARNING
-from .tools import logging
+
 from ..translation import _
+from .static import HEADERS, USERAGENT, WARNING
+from .tools import logging
 
 __all__ = ["Manager"]
 
@@ -47,35 +46,37 @@ class Manager:
     WEB_SESSION = r"(?:^|; )web_session=[^;]+"
 
     def __init__(
-            self,
-            root: Path,
-            path: str,
-            folder: str,
-            name_format: str,
-            chunk: int,
-            user_agent: str,
-            cookie: str,
-            proxy: str | dict,
-            timeout: int,
-            retry: int,
-            record_data: bool,
-            image_format: str,
-            image_download: bool,
-            video_download: bool,
-            live_download: bool,
-            download_record: bool,
-            folder_mode: bool,
-            _print: bool,
+        self,
+        root: Path,
+        path: str,
+        folder: str,
+        name_format: str,
+        chunk: int,
+        user_agent: str,
+        cookie: str,
+        proxy: str | dict,
+        timeout: int,
+        retry: int,
+        record_data: bool,
+        image_format: str,
+        image_download: bool,
+        video_download: bool,
+        live_download: bool,
+        download_record: bool,
+        folder_mode: bool,
+        author_archive: bool,
+        write_mtime: bool,
+        _print: bool,
     ):
         self.root = root
         self.temp = root.joinpath("./temp")
         self.path = self.__check_path(path)
         self.folder = self.__check_folder(folder)
         self.blank_headers = HEADERS | {
-            'user-agent': user_agent or USERAGENT,
+            "user-agent": user_agent or USERAGENT,
         }
         self.headers = self.blank_headers | {
-            'cookie': cookie,
+            "cookie": cookie,
         }
         self.retry = retry
         self.chunk = chunk
@@ -86,10 +87,14 @@ class Manager:
         self.download_record = self.check_bool(download_record, True)
         self.proxy_tip = None
         self.proxy = self.__check_proxy(proxy)
-        self.print_proxy_tip(_print, )
+        self.print_proxy_tip(
+            _print,
+        )
+        self.timeout = timeout
         self.request_client = AsyncClient(
-            headers=self.headers | {
-                'referer': 'https://www.xiaohongshu.com/',
+            headers=self.headers
+            | {
+                "referer": "https://www.xiaohongshu.com/",
             },
             timeout=timeout,
             verify=False,
@@ -112,6 +117,8 @@ class Manager:
         self.image_download = self.check_bool(image_download, True)
         self.video_download = self.check_bool(video_download, True)
         self.live_download = self.check_bool(live_download, True)
+        self.author_archive = self.check_bool(author_archive, False)
+        self.write_mtime = self.check_bool(write_mtime, False)
 
     def __check_path(self, path: str) -> Path:
         if not path:
@@ -135,8 +142,15 @@ class Manager:
 
     @staticmethod
     def __check_image_format(image_format) -> str:
-        if image_format in {"png", "PNG", "webp", "WEBP"}:
-            return image_format.lower()
+        if (i := image_format.lower()) in {
+            "auto",
+            "png",
+            "webp",
+            "jpeg",
+            "heic",
+            "avif",
+        }:
+            return i
         return "png"
 
     @staticmethod
@@ -152,9 +166,21 @@ class Manager:
     def archive(root: Path, name: str, folder_mode: bool) -> Path:
         return root.joinpath(name) if folder_mode else root
 
-    @staticmethod
-    def move(temp: Path, path: Path):
+    @classmethod
+    def move(
+        cls,
+        temp: Path,
+        path: Path,
+        mtime: int = None,
+        rewrite: bool = False,
+    ):
         move(temp.resolve(), path.resolve())
+        if rewrite and mtime:
+            cls.update_mtime(path.resolve(), mtime)
+
+    @staticmethod
+    def update_mtime(file: Path, mtime: int):
+        utime(file, (mtime, mtime))
 
     def __clean(self):
         rmtree(self.temp.resolve())
@@ -177,18 +203,14 @@ class Manager:
     def __check_name_format(self, format_: str) -> str:
         keys = format_.split()
         return next(
-            (
-                "发布时间 作者昵称 作品标题"
-                for key in keys
-                if key not in self.NAME_KEYS
-            ),
+            ("发布时间 作者昵称 作品标题" for key in keys if key not in self.NAME_KEYS),
             format_,
         )
 
     def __check_proxy(
-            self,
-            proxy: str,
-            url="https://www.xiaohongshu.com/explore",
+        self,
+        proxy: str,
+        url="https://www.xiaohongshu.com/explore",
     ) -> str | None:
         if proxy:
             try:
@@ -198,7 +220,7 @@ class Manager:
                     timeout=10,
                     headers={
                         "User-Agent": USERAGENT,
-                    }
+                    },
                 )
                 response.raise_for_status()
                 self.proxy_tip = (_("代理 {0} 测试成功").format(proxy),)
@@ -209,8 +231,8 @@ class Manager:
                     WARNING,
                 )
             except (
-                    RequestError,
-                    HTTPStatusError,
+                RequestError,
+                HTTPStatusError,
             ) as e:
                 self.proxy_tip = (
                     _("代理 {0} 测试失败：{1}").format(
@@ -220,7 +242,11 @@ class Manager:
                     WARNING,
                 )
 
-    def print_proxy_tip(self, _print: bool = True, log=None, ) -> None:
+    def print_proxy_tip(
+        self,
+        _print: bool = True,
+        log=None,
+    ) -> None:
         if _print and self.proxy_tip:
             logging(log, *self.proxy_tip)
 
@@ -240,6 +266,6 @@ class Manager:
             # 使用空字符串替换匹配到的部分
             cookie_string = sub(pattern, "", cookie_string)
         # 去除多余的分号和空格
-        cookie_string = sub(r';\s*$', "", cookie_string)  # 删除末尾的分号和空格
-        cookie_string = sub(r';\s*;', ";", cookie_string)  # 删除中间多余分号后的空格
-        return cookie_string.strip('; ')
+        cookie_string = sub(r";\s*$", "", cookie_string)  # 删除末尾的分号和空格
+        cookie_string = sub(r";\s*;", ";", cookie_string)  # 删除中间多余分号后的空格
+        return cookie_string.strip("; ")
