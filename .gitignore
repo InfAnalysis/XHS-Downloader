@@ -51,3 +51,6 @@ __pycache__/
 *.json
 /Temp/
 !.github/workflows/*.yaml
+
+# ignore settings.json
+settings.json
