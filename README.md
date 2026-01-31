@@ -96,8 +96,7 @@
 <li>运行 <code>python .\main.py</code> 或者 <code>python main.py</code> 命令启动 XHS-Downloader</li>
 </ol>
 <ol><b>使用 uv 安装项目依赖（推荐）</b>
-<li>运行 <code>uv venv</code> 命令创建虚拟环境</li>
-<li>运行 <code>uv sync</code> 命令同步环境依赖</li>
+<li>运行 <code>uv sync --no-dev</code> 命令同步环境依赖</li>
 <li>运行 <code>uv run main.py</code> 命令启动 XHS-Downloader</li>
 </ol>
 </ol>

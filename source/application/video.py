@@ -38,8 +38,10 @@ class Video:
         match preference:
             case "resolution":
                 items.sort(key=lambda x: x.height)
-            case "bitrate" | "size":
-                items.sort(key=lambda x: x.preference)
+            case "bitrate":
+                items.sort(key=lambda x: x.videoBitrate)
+            case "size":
+                items.sort(key=lambda x: x.size)
             case _:
                 raise ValueError(f"Invalid video preference value: {preference}")
         return [b[0]] if (b := items[-1].backupUrls) else [items[-1].masterUrl]

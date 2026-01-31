@@ -97,8 +97,7 @@
 <li>Run the command <code>python .\main.py</code> or <code>python main.py</code> to start XHS-Downloader</li>
 </ol>
 <ol><b>Install project dependencies using uv (recommended)</b>
-<li>Run the command <code>uv venv</code> to create a virtual environment</li>
-<li>Run the command <code>uv sync</code> to synchronize environment dependencies</li>
+<li>Run the command <code>uv sync --no-dev</code> to synchronize environment dependencies</li>
 <li>Run the command <code>uv run main.py</code> to start XHS-Downloader</li>
 </ol>
 </ol>
