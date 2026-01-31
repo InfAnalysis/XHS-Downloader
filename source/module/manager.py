@@ -66,6 +66,7 @@ class Manager:
         image_download: bool,
         video_download: bool,
         live_download: bool,
+        video_preference: str,
         download_record: bool,
         folder_mode: bool,
         author_archive: bool,
@@ -123,6 +124,7 @@ class Manager:
         )
         self.image_download = self.check_bool(image_download, True)
         self.video_download = self.check_bool(video_download, True)
+        self.video_preference = self.check_video_preference(video_preference)
         self.live_download = self.check_bool(live_download, True)
         self.author_archive = self.check_bool(author_archive, False)
         self.write_mtime = self.check_bool(write_mtime, False)
@@ -213,6 +215,12 @@ class Manager:
             ("发布时间 作者昵称 作品标题" for key in keys if key not in self.NAME_KEYS),
             format_,
         )
+
+    @staticmethod
+    def check_video_preference(preference: str) -> str:
+        if preference in {"resolution", "bitrate", "size"}:
+            return preference
+        return "resolution"
 
     def __check_proxy(
         self,

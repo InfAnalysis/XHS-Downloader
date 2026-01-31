@@ -290,6 +290,11 @@ class CLI:
     type=bool,
 )
 @option(
+    "--video_preference",
+    "-vp",
+    type=Choice(["resolution", "bitrate", "size"]),
+)
+@option(
     "--download_record",
     "-dr",
     type=bool,

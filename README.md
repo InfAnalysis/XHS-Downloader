@@ -458,6 +458,12 @@ async def example():
 <td align="center">false</td>
 </tr>
 <tr>
+<td align="center">video_preference</td>
+<td align="center">str</td>
+<td align="center">视频作品文件下载偏好；含义：<code>resolution</code>：分辨率优先；<code>bitrate</code>：码率优先；<code>size</code>：文件大小优先</td>
+<td align="center">resolution</td>
+</tr>
+<tr>
 <td align="center">folder_mode</td>
 <td align="center">bool</td>
 <td align="center">是否将每个作品的文件储存至单独的文件夹；文件夹名称与文件名称保持一致</td>

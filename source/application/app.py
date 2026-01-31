@@ -130,6 +130,7 @@ class XHS:
         image_download=True,
         video_download=True,
         live_download=False,
+        video_preference="resolution",
         folder_mode=False,
         download_record=True,
         author_archive=False,
@@ -160,6 +161,7 @@ class XHS:
             image_download,
             video_download,
             live_download,
+            video_preference,
             download_record,
             folder_mode,
             author_archive,
@@ -202,6 +204,7 @@ class XHS:
     ):
         container["下载地址"] = self.video.deal_video_link(
             data,
+            self.manager.video_preference,
         )
         container["动图地址"] = [
             None,
