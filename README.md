@@ -75,7 +75,7 @@
 <p>⭐ 推荐使用 <a href="https://learn.microsoft.com/zh-cn/windows/terminal/install">Windows 终端</a> （Windows 11 默认终端）运行程序以便获得最佳显示效果！</p>
 <h1>🥣 使用方法</h1>
 <p>如果仅需下载无水印作品文件，建议选择 <b>程序运行</b> 或 <b>Docker 运行</b>；如果有其他需求，建议选择 <b>源码运行</b>！</p>
-<p><code>2.2</code> 版本开始，项目功能无异常的情况下，无需额外处理 Cookie！</p>
+<p>未设置 Cookie 时，视频作品只能下载低分辨率文件；建议配置 Cookie 以获取更高画质（无需登录账号）！</p>
 <h2>🖱 程序运行</h2>
 <p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 或者 <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
 <p>⭐ 本项目包含自动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
@@ -509,7 +509,6 @@ async def example():
 <p><b>其他说明：<code>user_agent</code>参数获取示例；强烈建议根据实际浏览器信息进行设置！</b></p>
 <img src="static/screenshot/请求头示例图.png" alt="">
 <h1 id="cookie">🌐 Cookie</h1>
-<p><code>2.2</code> 版本开始，项目功能无异常的情况下，无需额外处理 Cookie！</p>
 <ol>
 <li>打开浏览器（可选无痕模式启动），访问 <code>https://www.xiaohongshu.com/explore</code></li>
 <li>登录小红书账号（可跳过）</li>

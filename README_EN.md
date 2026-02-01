@@ -76,7 +76,7 @@
 <p>⭐ It is recommended to use the <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a> (default terminal for Windows 11) to run the program for the best display effect!</p>
 <h1>🥣 Usage</h1>
 <p>If you only need to download watermark-free notes files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
-<p>Starting from version <code>2.2</code>, if there are no abnormalities in project functionality, there is no need to handle cookies separately!</p>
+<p>When Cookie is not set, video works can only be downloaded in low resolution; it is recommended to configure Cookie to obtain higher quality (no need to log in to the account)!</p>
 <h2>🖱 Program Run</h2>
 <p>⭐ Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> or <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
 <p>⭐ This project includes GitHub Actions for automatic building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
@@ -532,7 +532,6 @@ async def example():
 <p><b>Additional Notes: The parameters <code>user_agent</code> examples are provided for reference; Strongly recommend setting according to actual browser information!</b></p>
 <img src="static/screenshot/请求头示例图.png" alt="">
 <h1 id="cookie">🌐 Cookie</h1>
-<p>Starting from version <code>2.2</code>, if there are no abnormalities in project functionality, there is no need to handle cookies separately!</p>
 <ol>
 <li>Open the browser (optional: start in incognito mode) and visit <code>https://www.xiaohongshu.com/explore</code></li>
 <li>Log in to your RedNote account (can be skipped)</li>
