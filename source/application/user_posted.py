@@ -20,18 +20,19 @@ class UserPosted:
     ):
         self.url = url
         self.params = params
-        self.headers = manager.headers.copy()
-        self.update_cookie(cookies)
-        self.cookies = self.headers["cookie"]
+        self.headers = manager.blank_headers.copy()
+        self.client = manager.request_client
+        self.cookies = self.get_cookie(cookies)
         self.print = manager.print
         self.retry = manager.retry
-        self.client = manager.request_client
         self.timeout = manager.timeout
         self.proxy = proxy
 
-    def update_cookie(self, cookies: str = None) -> None:
+    def get_cookie(self, cookies: str = None) -> dict | str:
         if cookies:
             self.headers["cookie"] = cookies
+            return cookies
+        return dict(self.client.cookies)
 
     def run(
         self,

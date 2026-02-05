@@ -2,6 +2,7 @@ from pathlib import Path
 from re import compile, sub
 from shutil import move, rmtree
 from os import utime
+from http.cookies import SimpleCookie
 from httpx import (
     AsyncClient,
     AsyncHTTPTransport,
@@ -85,9 +86,6 @@ class Manager:
         self.blank_headers = HEADERS | {
             "user-agent": user_agent or USERAGENT,
         }
-        self.headers = self.blank_headers | {
-            "cookie": cookie,
-        }
         self.retry = retry
         self.chunk = chunk
         self.name_format = self.__check_name_format(name_format)
@@ -100,10 +98,11 @@ class Manager:
         self.print_proxy_tip()
         self.timeout = timeout
         self.request_client = AsyncClient(
-            headers=self.headers
+            headers=self.blank_headers
             | {
                 "referer": "https://www.xiaohongshu.com/",
             },
+            cookies=self.cookie_str_to_dict(cookie),
             timeout=timeout,
             verify=False,
             follow_redirects=True,
@@ -299,3 +298,9 @@ class Manager:
             and not self.folder.exists()
         ):
             move(old, self.folder)
+
+    @staticmethod
+    def cookie_str_to_dict(cookie_str: str) -> dict:
+        cookie = SimpleCookie()
+        cookie.load(cookie_str)
+        return {key: morsel.value for key, morsel in cookie.items()}

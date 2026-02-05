@@ -51,7 +51,7 @@ def logging(log: Callable, text, style=INFO):
 
 
 async def sleep_time(
-    min_time: int | float = 2.0,
-    max_time: int | float = 4.0,
+    min_time: int | float = 5.0,
+    max_time: int | float = 10.0,
 ):
     await sleep(uniform(min_time, max_time))
