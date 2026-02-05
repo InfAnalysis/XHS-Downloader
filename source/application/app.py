@@ -492,7 +492,10 @@ class XHS:
         ):
             return data
         data = await self._deal_download_tasks(
-            data,
+            data
+            | {
+                "作品链接": url,
+            },
             namespace,
             id_,
             download,
