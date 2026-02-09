@@ -248,7 +248,8 @@ msgstr "Record notes data to file"
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\CLI\main.py:162
 msgid "图文作品文件下载格式，支持：PNG、WEBP、JPEG、HEIC、AUTO"
-msgstr "Image notes file download format, supporting: PNG、WEBP、JPEG、HEIC、AUTO"
+msgstr ""
+"Image notes file download format, supporting: PNG、WEBP、JPEG、HEIC、AUTO"
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\CLI\main.py:164
 msgid "动态图片下载开关"
@@ -488,8 +489,8 @@ msgid "多个链接之间使用空格分隔"
 msgstr "Separate multiple links with spaces"
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\TUI\index.py:64
-msgid "下载无水印作品文件"
-msgstr "Download images/video files"
+msgid "下载作品文件"
+msgstr "Download notes files"
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\TUI\index.py:65
 msgid "读取剪贴板"

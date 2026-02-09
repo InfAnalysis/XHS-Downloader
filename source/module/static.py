@@ -2,7 +2,7 @@ from pathlib import Path
 
 VERSION_MAJOR = 2
 VERSION_MINOR = 7
-VERSION_BETA = True
+VERSION_BETA = False
 __VERSION__ = f"{VERSION_MAJOR}.{VERSION_MINOR}.{'beta' if VERSION_BETA else 'stable'}"
 ROOT = Path(__file__).resolve().parent.parent.parent.joinpath("Volume")
 ROOT.mkdir(exist_ok=True)

@@ -17,7 +17,7 @@
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=flat-square&color=ffdd59">
 </div>
 <br>
-<p>🔥 <b>RedNote Link Extraction/Content Collection Tool</b>：Extract account-published, favorites, and liked notes links; extract search result notes links and user links; collect RedNote notes information; extract RedNote notes download addresses; download RedNote watermark-free notes files!</p>
+<p>🔥 <b>RedNote Link Extraction/Content Collection Tool</b>：Extract account-published, favorites, and liked notes links; extract search result notes links and user links; collect RedNote notes information; extract RedNote notes download addresses; download RedNote notes files!</p>
 <p>🔥 "RedNote", "XiaoHongShu" and "小红书" have the same meaning, and this project is collectively referred to as "RedNote".</p>
 <p>⭐ Due to the author's limited energy, I was unable to update the English document in a timely manner, and the content may have become outdated, partial translation is machine translation, the translation result may be incorrect, Suggest referring to Chinese documentation. If you want to contribute to translation, we warmly welcome you.</p>
 <h1>📑 Project Features</h1>
@@ -26,8 +26,8 @@
 <ul><b>Program Features</b>
 <li>✅ Collect RedNote notes information</li>
 <li>✅ Extract RedNote notes download addresses</li>
-<li>✅ Download RedNote watermark-free notes files</li>
-<li>✅ Download RedNote livePhoto files (watermark)</li>
+<li>✅ Download RedNote notes files</li>
+<li>✅ Download RedNote livePhoto files</li>
 <li>✅ Automatically skip already downloaded notes files</li>
 <li>✅ notes file integrity handling mechanism</li>
 <li>✅ Customizable image notes file download format</li>
@@ -36,7 +36,7 @@
 <li>✅ Background clipboard monitoring for notes download</li>
 <li>✅ Record downloaded notes IDs</li>
 <li>✅ Support command line for downloading notes files</li>
-<li>✅ Read cookies from browser</li>
+<li>☑️ Read cookies from browser</li>
 <li>✅ Customizable file name format</li>
 <li>✅ Support API call functionality</li>
 <li>✅ Support MCP call functionality</li>
@@ -46,7 +46,7 @@
 <li>✅ Automatic author nickname updates</li>
 </ul>
 <ul><a href="#user-scripts"><b>Script Features</b></a>
-<li>✅ Download RedNote watermark-free notes files</li>
+<li>✅ Download RedNote notes files</li>
 <li>✅ Extract discovery page notes links</li>
 <li>✅ Extract account-published notes links</li>
 <li>✅ Extract account-favorited notes links</li>
@@ -75,8 +75,8 @@
 <h1>🪟 About the Terminal</h1>
 <p>⭐ It is recommended to use the <a href="https://learn.microsoft.com/en-us/windows/terminal/install">Windows Terminal</a> (default terminal for Windows 11) to run the program for the best display effect!</p>
 <h1>🥣 Usage</h1>
-<p>If you only need to download watermark-free notes files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
-<p>When Cookie is not set, video works can only be downloaded in low resolution; it is recommended to configure Cookie to obtain higher quality (no need to log in to the account)!</p>
+<p>If you only need to download notes files, it is recommended to choose <b>Program Run</b>; if you have other needs, it is recommended to choose <b>Source Code Run</b>!</p>
+<p>⚠️ When Cookie is not set, video works can only be downloaded in low resolution; it is recommended to configure Cookie to obtain higher quality (no need to log in to the account)!</p>
 <h2>🖱 Program Run</h2>
 <p>⭐ Mac OS, Windows 10 and above users can go to <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> or <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> to download the program package, unzip it, open the program folder, and double-click to run <code>main</code> to use.</p>
 <p>⭐ This project includes GitHub Actions for automatic building executable files. Users can use GitHub Actions to build the latest source code into executable files at any time!</p>
@@ -260,7 +260,7 @@ async def example_api():
 <hr>
 <img src="static/screenshot/用户脚本截图4.png" alt="">
 </details>
-<p>Note: Using the XHS-Downloader user script to batch extract notes links, in combination with the XHS-Downloader program, can achieve batch downloading of watermark-free notes files!</p>
+<p>Note: Using the XHS-Downloader user script to batch extract notes links, in combination with the XHS-Downloader program, can achieve batch downloading of notes files!</p>
 <p><b>Modify user script language</b></p>
 <img src="static/screenshot/脚本切换语言.png" alt="切换语言">
 <h2>🌐 Connect to Server</h2>
@@ -273,7 +273,7 @@ async def example_api():
 </ul>
 <h2>📜 Script Instructions</h2>
 <ul>
-<li>When downloading watermark-free notes from Xiaohongshu, the script requires time to process the files. Please wait for a moment and do not click the download button multiple times.</li>
+<li>When downloading notes from RedNote, the script requires time to process the files. Please wait for a moment and do not click the download button multiple times.</li>
 <li>When extracting links for posts, collects, likes, and board from an account, the script can automatically scroll the page until all notes are loaded.</li>
 <li>When extracting recommended notes links, search notes, and user links, the script can automatically scroll a specified number of times to load more content. The default number of page scrolls is 50.</li>
 <li>The automatic scrolling page function is turned off by default; Users can freely open and modify the number of times the page is scrolled, and the modification will take effect immediately.</li>
@@ -283,7 +283,7 @@ async def example_api():
 <li>Using global proxy tools may cause script download failures. If there are issues, please try disabling the proxy tool. If necessary, contact the author for feedback.</li>
 <li>XHS-Downloader userscript only implements the data collection functionality for visible content and does not include any paid or cracked features.</li>
 </ul>
-<p><strong>The automatic page scroll feature has been refactored and is turned off by default! Enabling this feature may be detected as automated behavior by Xiaohongshu, potentially resulting in account risk control or banning.</strong></p>
+<p><strong>The automatic page scroll feature has been refactored and is turned off by default! Enabling this feature may be detected as automated behavior by RedNote, potentially resulting in account risk control or banning.</strong></p>
 <h1>💻 Secondary Development</h1>
 <p>If you have other needs, you can perform code calls or modifications based on the comments in <code>example.py</code>!</p>
 <pre>

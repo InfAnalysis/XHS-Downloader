@@ -2,12 +2,12 @@
 // @name           XHS-Downloader
 // @namespace      xhs_downloader
 // @homepage       https://github.com/JoeanAmier/XHS-Downloader
-// @version        2.3.0
+// @version        2.3.1
 // @tag            小红书
 // @tag            RedNote
 // @tag            XiaoHongShu
-// @description    提取小红书作品/用户链接，下载小红书无水印图文/视频作品文件
-// @description:en Extract RedNote works/user links, Download watermark-free images/videos files
+// @description    提取小红书作品/用户链接，下载小红书图文/视频作品文件
+// @description:en Extract RedNote works/user links, Download images/videos files
 // @author         JoeanAmier
 // @match          http*://www.xiaohongshu.com/explore*
 // @match          http*://www.xiaohongshu.com/discovery/item/*
@@ -35,7 +35,7 @@
     const i18n = {
         'CN': {
             instructionsText: `功能清单：
-1. 下载小红书无水印作品文件
+1. 下载小红书作品文件
 2. 提取推荐页面作品链接
 3. 提取账号发布作品链接
 4. 提取账号收藏作品链接
@@ -45,7 +45,7 @@
 8. 提取搜索结果用户链接
 
 注意事项：
-1. 下载小红书无水印作品文件时，脚本需要花费时间处理文件，请等待片刻，请勿多次点击下载按钮
+1. 下载小红书作品文件时，脚本需要花费时间处理文件，请等待片刻，请勿多次点击下载按钮
 2. 提取账号发布、收藏、点赞、专辑作品链接时，脚本可以自动滚动页面直至加载全部作品
 3. 提取推荐作品链接、搜索作品、用户链接时，脚本可以自动滚动指定次数加载更多内容，默认滚动次数：50 次
 4. 自动滚动页面功能默认关闭；用户可以自由开启，并修改滚动页面次数，修改后立即生效
@@ -137,7 +137,7 @@ KS-Downloader（快手、KuaiShou）：https://github.com/JoeanAmier/KS-Download
             extractRecommendLinksText: '提取推荐作品链接',
             extractRecommendLinksDescription: '提取推荐页面的作品链接至剪贴板',
             downloadNoteFilesText: '下载作品文件',
-            downloadNoteFilesDescription: '下载当前作品的无水印文件',
+            downloadNoteFilesDescription: '下载当前作品文件',
             pushDownloadTaskText: '推送下载任务',
             pushDownloadTaskDescription: '向服务器发送下载请求',
             extractPublishedLinksText: '提取发布作品链接',
@@ -163,7 +163,7 @@ KS-Downloader（快手、KuaiShou）：https://github.com/JoeanAmier/KS-Download
             settingsTitle: '用户脚本设置',
         }, 'EN': {
             instructionsText: `Features:
-1. Download RedNote watermark-free note files
+1. Download RedNote note files
 2. Extract note links from the Recommendation page
 3. Extract note links from an account's Published tab
 4. Extract note links from an account's Collections tab
@@ -173,7 +173,7 @@ KS-Downloader（快手、KuaiShou）：https://github.com/JoeanAmier/KS-Download
 8. Extract user links from search results
 
 Notes:
-1. When downloading watermark-free note files, the script needs time to process. Please wait a moment and do not click the download button repeatedly.
+1. When downloading note files, the script needs time to process. Please wait a moment and do not click the download button repeatedly.
 2. When extracting links from Published, Collections, Liked, or Albums, the script can automatically scroll the page until all notes are loaded.
 3. When extracting Recommendation, Search Notes, or User links, the script can automatically scroll a specified number of times. Default: 50 times.
 4. Auto-scroll is disabled by default; users can enable it and modify the scroll count. Changes take effect immediately.

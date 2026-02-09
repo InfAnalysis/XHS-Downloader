@@ -460,7 +460,7 @@ msgid "多个链接之间使用空格分隔"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\TUI\index.py:64
-msgid "下载无水印作品文件"
+msgid "下载作品文件"
 msgstr ""
 
 #: C:\Users\You\PycharmProjects\XHS-Downloader\source\TUI\index.py:65

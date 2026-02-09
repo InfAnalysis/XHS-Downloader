@@ -17,7 +17,7 @@
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/JoeanAmier/XHS-Downloader/total?style=flat-square&color=ffdd59">
 </div>
 <br>
-<p>🔥 <b>小红书链接提取/作品采集工具</b>：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品链接、用户链接；采集小红书作品信息；提取小红书作品下载地址；下载小红书无水印作品文件！</p>
+<p>🔥 <b>小红书链接提取/作品采集工具</b>：提取账号发布、收藏、点赞、专辑作品链接；提取搜索结果作品链接、用户链接；采集小红书作品信息；提取小红书作品下载地址；下载小红书作品文件！</p>
 <p>🔥 “小红书”、“XiaoHongShu”、“RedNote” 含义相同，本项目统称为 “小红书”</p>
 <h1>📑 项目功能</h1>
 <details>
@@ -25,8 +25,8 @@
 <ul><b>程序功能</b>
 <li>✅ 采集小红书作品信息</li>
 <li>✅ 提取小红书作品下载地址</li>
-<li>✅ 下载小红书无水印作品文件</li>
-<li>✅ 下载小红书 livePhoto 文件(含水印)</li>
+<li>✅ 下载小红书作品文件</li>
+<li>✅ 下载小红书 livePhoto 文件</li>
 <li>✅ 自动跳过已下载的作品文件</li>
 <li>✅ 作品文件完整性处理机制</li>
 <li>✅ 自定义图文作品文件下载格式</li>
@@ -35,7 +35,7 @@
 <li>✅ 后台监听剪贴板下载作品</li>
 <li>✅ 记录已下载作品 ID</li>
 <li>✅ 支持命令行下载作品文件</li>
-<li>✅ 从浏览器读取 Cookie</li> 
+<li>☑️ 从浏览器读取 Cookie</li> 
 <li>✅ 自定义文件名称格式</li> 
 <li>✅ 支持 API 调用功能</li>
 <li>✅ 支持 MCP 调用功能</li>
@@ -45,7 +45,7 @@
 <li>✅ 自动更新作者昵称</li>
 </ul>
 <ul><a href="#user-scripts"><b>脚本功能</b></a>
-<li>✅ 下载小红书无水印作品文件</li>
+<li>✅ 下载小红书作品文件</li>
 <li>✅ 提取推荐页面作品链接</li>
 <li>✅ 提取账号发布作品链接</li>
 <li>✅ 提取账号收藏作品链接</li>
@@ -74,8 +74,8 @@
 <h1>🪟 关于终端</h1>
 <p>⭐ 推荐使用 <a href="https://learn.microsoft.com/zh-cn/windows/terminal/install">Windows 终端</a> （Windows 11 默认终端）运行程序以便获得最佳显示效果！</p>
 <h1>🥣 使用方法</h1>
-<p>如果仅需下载无水印作品文件，建议选择 <b>程序运行</b> 或 <b>Docker 运行</b>；如果有其他需求，建议选择 <b>源码运行</b>！</p>
-<p>未设置 Cookie 时，视频作品只能下载低分辨率文件；建议配置 Cookie 以获取更高画质（无需登录账号）！</p>
+<p>如果仅需下载作品文件，建议选择 <b>程序运行</b> 或 <b>Docker 运行</b>；如果有其他需求，建议选择 <b>源码运行</b>！</p>
+<p>⚠️ 未设置 Cookie 时，视频作品只能下载低分辨率文件；建议配置 Cookie 以获取更高画质（无需登录账号）！</p>
 <h2>🖱 程序运行</h2>
 <p>⭐ Mac OS、Windows 10 及以上用户可前往 <a href="https://github.com/JoeanAmier/XHS-Downloader/releases/latest">Releases</a> 或者 <a href="https://github.com/JoeanAmier/XHS-Downloader/actions">Actions</a> 下载程序压缩包，解压后打开程序文件夹，双击运行 <code>main</code> 即可使用。</p>
 <p>⭐ 本项目包含自动构建可执行文件的 GitHub Actions，使用者可以随时使用 GitHub Actions 将最新源码构建为可执行文件！</p>
@@ -256,7 +256,7 @@ async def example_api():
 <hr>
 <img src="static/screenshot/用户脚本截图4.png" alt="">
 </details>
-<p>提示：使用 XHS-Downloader 用户脚本批量提取作品链接，搭配 XHS-Downloader 程序可以实现批量下载无水印作品文件！</p>
+<p>提示：使用 XHS-Downloader 用户脚本批量提取作品链接，搭配 XHS-Downloader 程序可以实现批量下载作品文件！</p>
 <p><b>修改用户脚本语言</b></p>
 <img src="static/screenshot/脚本切换语言.png" alt="切换语言">
 <h2>🌏 连接服务器</h2>
@@ -269,7 +269,7 @@ async def example_api():
 </ul>
 <h2>📜 脚本说明</h2>
 <ul>
-<li>下载小红书无水印作品文件时，脚本需要花费时间处理文件，请等待片刻，请勿多次点击下载按钮</li>
+<li>下载小红书作品文件时，脚本需要花费时间处理文件，请等待片刻，请勿多次点击下载按钮</li>
 <li>提取账号发布、收藏、点赞、专辑作品链接时，脚本可以自动滚动页面直至加载全部作品</li>
 <li>提取推荐作品链接、搜索作品、用户链接时，脚本可以自动滚动指定次数加载更多内容，默认滚动次数：50 次</li>
 <li>自动滚动页面功能默认关闭；用户可以自由开启，并修改滚动页面次数，修改后立即生效</li>
