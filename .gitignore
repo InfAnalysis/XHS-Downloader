@@ -24,7 +24,6 @@ Thumbs.db
 
 # IDEs and editors
 .vscode/
-.idea/
 *.suo
 *.ntvs*
 *.njsproj
@@ -47,10 +46,12 @@ __pycache__/
 *.pyc
 /.venv/
 /.ruff_cache/
-*.db
-*.json
-/Temp/
-!.github/workflows/*.yaml
+
+# Upstream entries
+/.idea/
+/.run/
+/Volume/
+!/.github/
 
 # ignore settings.json
 settings.json

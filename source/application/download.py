@@ -14,7 +14,7 @@ from ..module import (
     FILE_SIGNATURES_LENGTH,
     MAX_WORKERS,
     logging,
-    sleep_time,
+    # sleep_time,
 )
 from ..module import retry as re_download
 from ..translation import _
@@ -44,6 +44,7 @@ class Download:
         manager: "Manager",
     ):
         self.manager = manager
+        self.print = manager.print
         self.folder = manager.folder
         self.temp = manager.temp
         self.chunk = manager.chunk
@@ -76,8 +77,6 @@ class Download:
         filename: str,
         type_: str,
         mtime: int,
-        log,
-        bar,
     ) -> tuple[Path, list[Any]]:
         path = self.__generate_path(nickname, filename)
         if type_ == _("视频"):
@@ -85,16 +84,17 @@ class Download:
                 urls,
                 path,
                 filename,
-                log,
             )
-        elif type_ == _("图文"):
+        elif type_ in {
+            _("图文"),
+            _("图集"),
+        }:
             tasks = self.__ready_download_image(
                 urls,
                 lives,
                 index,
                 path,
                 filename,
-                log,
             )
         else:
             raise ValueError
@@ -105,13 +105,11 @@ class Download:
                 name,
                 format_,
                 mtime,
-                log,
-                bar,
             )
             for url, name, format_ in tasks
         ]
         tasks = await gather(*tasks)
-        return path, tasks
+        return path, tasks  # 未解之谜
 
     def __generate_path(self, nickname: str, filename: str):
         if self.author_archive:
@@ -124,12 +122,18 @@ class Download:
         return path
 
     def __ready_download_video(
-        self, urls: list[str], path: Path, name: str, log
+        self,
+        urls: list[str],
+        path: Path,
+        name: str,
     ) -> list:
         if not self.video_download:
-            logging(log, _("视频作品下载功能已关闭，跳过下载"))
+            logging(self.print, _("视频作品下载功能已关闭，跳过下载"))
             return []
-        if self.__check_exists_path(path, f"{name}.{self.video_format}", log):
+        if self.__check_exists_path(
+            path,
+            f"{name}.{self.video_format}",
+        ):
             return []
         return [(urls[0], name, self.video_format)]
 
@@ -140,11 +144,10 @@ class Download:
         index: list | tuple | None,
         path: Path,
         name: str,
-        log,
     ) -> list:
         tasks = []
         if not self.image_download:
-            logging(log, _("图文作品下载功能已关闭，跳过下载"))
+            logging(self.print, _("图文作品下载功能已关闭，跳过下载"))
             return tasks
         for i, j in enumerate(zip(urls, lives), start=1):
             if index and i not in index:
@@ -154,7 +157,6 @@ class Download:
                 self.__check_exists_path(
                     path,
                     f"{file}.{s}",
-                    log,
                 )
                 for s in self.image_format_list
             ):
@@ -165,7 +167,6 @@ class Download:
                 or self.__check_exists_path(
                     path,
                     f"{file}.{self.live_format}",
-                    log,
                 )
             ):
                 continue
@@ -176,10 +177,9 @@ class Download:
         self,
         path: Path,
         name: str,
-        log,
     ) -> bool:
         if any(path.glob(name)):
-            logging(log, _("{0} 文件已存在，跳过下载").format(name))
+            logging(self.print, _("{0} 文件已存在，跳过下载").format(name))
             return True
         return False
 
@@ -187,10 +187,9 @@ class Download:
         self,
         path: Path,
         name: str,
-        log,
     ) -> bool:
         if path.joinpath(name).exists():
-            logging(log, _("{0} 文件已存在，跳过下载").format(name))
+            logging(self.print, _("{0} 文件已存在，跳过下载").format(name))
             return True
         return False
 
@@ -202,26 +201,9 @@ class Download:
         name: str,
         format_: str,
         mtime: int,
-        log,
-        bar,
     ):
         async with self.SEMAPHORE:
             headers = self.headers.copy()
-            # try:
-            #     length, suffix = await self.__head_file(
-            #         url,
-            #         headers,
-            #         format_,
-            #     )
-            # except HTTPError as error:
-            #     logging(
-            #         log,
-            #         _(
-            #             "网络异常，{0} 请求失败，错误信息: {1}").format(name, repr(error)),
-            #         ERROR,
-            #     )
-            #     return False
-            # temp = self.temp.joinpath(f"{name}.{suffix}")
             temp = self.temp.joinpath(f"{name}.{format_}")
             self.__update_headers_range(
                 headers,
@@ -233,7 +215,7 @@ class Download:
                     url,
                     headers=headers,
                 ) as response:
-                    await sleep_time()
+                    # await sleep_time()
                     if response.status_code == 416:
                         raise CacheError(
                             _("文件 {0} 缓存异常，重新下载").format(temp.name),
@@ -255,7 +237,6 @@ class Download:
                     name,
                     # suffix,
                     format_,
-                    log,
                 )
                 self.manager.move(
                     temp,
@@ -264,12 +245,12 @@ class Download:
                     self.write_mtime,
                 )
                 # self.__create_progress(bar, None)
-                logging(log, _("文件 {0} 下载成功").format(real.name))
+                logging(self.print, _("文件 {0} 下载成功").format(real.name))
                 return True
             except HTTPError as error:
                 # self.__create_progress(bar, None)
                 logging(
-                    log,
+                    self.print,
                     _("网络异常，{0} 下载失败，错误信息: {1}").format(
                         name, repr(error)
                     ),
@@ -279,10 +260,11 @@ class Download:
             except CacheError as error:
                 self.manager.delete(temp)
                 logging(
-                    log,
+                    self.print,
                     str(error),
                     ERROR,
                 )
+                return False
 
     @staticmethod
     def __create_progress(
@@ -308,11 +290,12 @@ class Download:
         headers: dict[str, str],
         suffix: str,
     ) -> tuple[int, str]:
+        """未使用"""
         response = await self.client.head(
             url,
             headers=headers,
         )
-        await sleep_time()
+        # await sleep_time()
         response.raise_for_status()
         suffix = self.__extract_type(response.headers.get("Content-Type")) or suffix
         length = response.headers.get("Content-Length", 0)
@@ -330,13 +313,12 @@ class Download:
         headers["Range"] = f"bytes={(p := self.__get_resume_byte_position(file))}-"
         return p
 
-    @staticmethod
     async def __suffix_with_file(
+        self,
         temp: Path,
         path: Path,
         name: str,
         default_suffix: str,
-        log,
     ) -> Path:
         try:
             async with open(temp, "rb") as f:
@@ -346,7 +328,7 @@ class Download:
                     return path.joinpath(f"{name}.{suffix}")
         except Exception as error:
             logging(
-                log,
+                self.print,
                 _("文件 {0} 格式判断失败，错误信息：{1}").format(
                     temp.name, repr(error)
                 ),

@@ -17,7 +17,8 @@ from rich.panel import Panel
 from rich.table import Table
 
 from source.application import XHS
-from source.expansion import BrowserCookie
+
+# from source.expansion import BrowserCookie
 from source.module import (
     ROOT,
     PROJECT,
@@ -45,7 +46,11 @@ class CLI:
         self.path = ctx.params.pop("settings")
         self.update = ctx.params.pop("update_settings")
         self.settings = Settings(self.__check_settings_path())
-        self.parameter = self.settings.run() | self.__clean_params(ctx.params)
+        self.parameter = (
+            self.settings.run()
+            | self.__clean_params(ctx.params)
+            | {"script_server": False}
+        )
         self.APP = XHS(**self.parameter)
 
     async def __aenter__(self):
@@ -96,15 +101,15 @@ class CLI:
         echo(PROJECT)
         ctx.exit()
 
-    @staticmethod
-    @check_value
-    def read_cookie(ctx: Context, param, value) -> str:
-        return BrowserCookie.get(
-            value,
-            domains=[
-                "xiaohongshu.com",
-            ],
-        )
+    # @staticmethod
+    # @check_value
+    # def read_cookie(ctx: Context, param, value) -> str:
+    #     return BrowserCookie.get(
+    #         value,
+    #         domains=[
+    #             "xiaohongshu.com",
+    #         ],
+    #     )
 
     @staticmethod
     @check_value
@@ -121,19 +126,19 @@ class CLI:
         )
 
         options = (
-            ("--url", "-u", "str", _("小红书作品链接")),
+            ("--url", "-u", "str", _("小红书作品链接，多个链接使用空格分隔")),
             (
                 "--index",
                 "-i",
                 "str",
                 fill(
                     _(
-                        '下载指定序号的图片文件，仅对图文作品生效；多个序号输入示例："1 3 5 7"'
+                        '下载指定序号的图片文件，仅对图文/图集作品生效；多个序号输入示例："1 3 5 7"'
                     ),
                     width=55,
                 ),
             ),
-            ("--work_path", "-wp", "str", _("作品数据 / 文件保存根路径")),
+            ("--work_path", "-wp", "str", _("作品数据/文件保存根路径")),
             ("--folder_name", "-fn", "str", _("作品文件储存文件夹名称")),
             ("--name_format", "-nf", "str", _("作品文件名称格式")),
             ("--user_agent", "-ua", "str", "User-Agent"),
@@ -154,7 +159,7 @@ class CLI:
                 "--image_format",
                 "-if",
                 "choice",
-                _("图文作品文件下载格式，支持：PNG、WEBP"),
+                _("图文作品文件下载格式，支持：PNG、WEBP、JPEG、HEIC、AUTO"),
             ),
             ("--live_download", "-ld", "bool", _("动态图片下载开关")),
             ("--download_record", "-dr", "bool", _("作品下载记录开关")),
@@ -181,25 +186,25 @@ class CLI:
             ),
             ("--language", "-l", "choice", _("设置程序语言，目前支持：zh_CN、en_US")),
             ("--settings", "-s", "str", _("读取指定配置文件")),
-            (
-                "--browser_cookie",
-                "-bc",
-                "choice",
-                fill(
-                    _(
-                        "从指定的浏览器读取小红书网页版 Cookie，支持：{0}; 输入浏览器名称或序号"
-                    ).format(
-                        ", ".join(
-                            f"{i}: {j}"
-                            for i, j in enumerate(
-                                BrowserCookie.SUPPORT_BROWSER.keys(),
-                                start=1,
-                            )
-                        )
-                    ),
-                    width=55,
-                ),
-            ),
+            # (
+            #     "--browser_cookie",
+            #     "-bc",
+            #     "choice",
+            #     fill(
+            #         _(
+            #             "从指定的浏览器读取小红书网页版 Cookie，支持：{0}; 输入浏览器名称或序号"
+            #         ).format(
+            #             ", ".join(
+            #                 f"{i}: {j}"
+            #                 for i, j in enumerate(
+            #                     BrowserCookie.SUPPORT_BROWSER.keys(),
+            #                     start=1,
+            #                 )
+            #             )
+            #         ),
+            #         width=55,
+            #     ),
+            # ),
             ("--update_settings", "-us", "flag", _("是否更新配置文件")),
             ("--help", "-h", "flag", _("查看详细参数说明")),
             ("--version", "-v", "flag", _("查看 XHS-Downloader 版本")),
@@ -275,12 +280,19 @@ class CLI:
 @option(
     "--image_format",
     "-if",
-    type=Choice(["png", "PNG", "webp", "WEBP"]),
+    type=Choice(
+        ["png", "PNG", "webp", "WEBP", "jpeg", "JPEG", "heic", "HEIC", "auto", "AUTO"]
+    ),
 )
 @option(
     "--live_download",
     "-ld",
     type=bool,
+)
+@option(
+    "--video_preference",
+    "-vp",
+    type=Choice(["resolution", "bitrate", "size"]),
 )
 @option(
     "--download_record",
@@ -312,15 +324,15 @@ class CLI:
     "-s",
     type=Path(dir_okay=False),
 )
-@option(
-    "--browser_cookie",
-    "-bc",
-    type=Choice(
-        list(BrowserCookie.SUPPORT_BROWSER.keys())
-        + [str(i) for i in range(1, len(BrowserCookie.SUPPORT_BROWSER) + 1)]
-    ),
-    callback=CLI.read_cookie,
-)
+# @option(
+#     "--browser_cookie",
+#     "-bc",
+#     type=Choice(
+#         list(BrowserCookie.SUPPORT_BROWSER.keys())
+#         + [str(i) for i in range(1, len(BrowserCookie.SUPPORT_BROWSER) + 1)]
+#     ),
+#     callback=CLI.read_cookie,
+# )
 @option(
     "--update_settings",
     "-us",
