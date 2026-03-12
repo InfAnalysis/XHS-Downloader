@@ -15,7 +15,6 @@ from urllib.parse import urlparse
 from textwrap import dedent
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from fastmcp import FastMCP
 from typing import Annotated
 from pydantic import Field
 from types import SimpleNamespace
@@ -762,6 +761,8 @@ class XHS:
         port=5556,
         log_level="INFO",
     ):
+        from fastmcp import FastMCP
+
         mcp = FastMCP(
             "XHS-Downloader",
             instructions=dedent("""
