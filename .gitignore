@@ -55,3 +55,8 @@ __pycache__/
 
 # ignore settings.json
 settings.json
+
+# Upstream build outputs
+/build/
+/dist/
+/output/
