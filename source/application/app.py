@@ -18,7 +18,6 @@ from urllib.parse import urlparse
 
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
-from fastmcp import FastMCP
 from pydantic import Field
 from pyperclip import copy, paste
 from rich import print
@@ -782,6 +781,8 @@ class XHS:
         port=5556,
         log_level="INFO",
     ):
+        from fastmcp import FastMCP
+
         mcp = FastMCP(
             "XHS-Downloader",
             instructions=dedent("""
