@@ -40,6 +40,8 @@ def get_ui_messages() -> dict[str, str]:
         "nav.about": _("关于项目"),
         "task.link": _("请输入小红书图文/视频作品链接"),
         "task.link_placeholder": _("多个链接之间使用空格或换行分隔"),
+        "task.index": _("图片序号"),
+        "task.index_placeholder": _("例如：1 3 5，留空表示全部，仅限处理单个链接"),
         "task.paste": _("读取剪贴板"),
         "task.paste_process": _("读取剪贴板并处理"),
         "task.clear": _("清空输入框"),
@@ -102,6 +104,10 @@ def get_ui_messages() -> dict[str, str]:
         "settings.image_download_help": _("关闭后，跳过下载图文和图集作品文件"),
         "settings.video_download": _("视频作品下载开关"),
         "settings.video_download_help": _("关闭后，跳过下载视频作品文件"),
+        "settings.video_cover_download": _("视频封面下载开关"),
+        "settings.video_cover_download_help": _(
+            "开启后，下载视频作品的封面图片，图片格式与图文作品下载格式一致"
+        ),
         "settings.live_download": _("动态图片下载开关"),
         "settings.live_download_help": _(
             "关闭后，跳过下载图文和图集作品的动态图片文件，需同时开启图文作品下载"
